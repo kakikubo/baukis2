@@ -1,0 +1,30 @@
+version: '3'
+services:
+  web:
+    build: .
+    command: ["bin/rails", "server", "-b", "0.0.0.0"]
+    environment:
+      BOOTSNAP_CACHE_DIR: '/usr/local/bundle'
+      WEBPACKER_DEV_SERVER_HOST: "0.0.0.0"
+      RAILS_SERVE_STATIC_FILES: "1"
+      EDITOR: "vim"
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - .:/apps:cached
+      - rails_cache:/apps/tmp/cache
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+      - "3035:3035"
+    depends_on:
+      - db
+    tty: true
+    user: root
+  db:
+    image: postgres:11.2-alpine
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+volumes:
+  bundle:
+  rails_cache:
+  db:
