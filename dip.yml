@@ -1,0 +1,51 @@
+version: '4.2'
+
+compose:
+  files:
+    - docker-compose.yml
+
+interaction:
+  bash:
+    description: Open the Bash shell in app's container
+    service: web
+    command: bash
+    compose:
+      run_options: [no-deps]
+
+  bundle:
+    description: Run Bundler commands
+    service: web
+    command: bundle
+
+  rake:
+    description: Run Rake commands
+    service: web
+    command: bundle exec rake
+
+  rspec:
+    description: Run Rspec commands
+    service: web
+    environment:
+      RAILS_ENV: test
+    command: bundle exec rspec
+
+  rubocop:
+    description: Run rubocop
+    service: web
+    command: bundle exec rubocop
+
+  rails:
+    description: Run Rails commands
+    service: web
+    command: bundle exec rails
+    subcommands:
+      s:
+        description: Run Rails server at http://booking-api.lvh.me:13000
+        service: web
+        compose:
+          run_options: [service-ports]
+
+provision:
+  - dip compose down --volumes
+  - dip compose up -d db
+  - dip bash -c ./bin/setup
