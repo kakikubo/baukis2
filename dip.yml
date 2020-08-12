@@ -17,6 +17,11 @@ interaction:
     service: web
     command: bundle
 
+  yarn:
+    description: Run Yarn commands
+    service: web
+    command: yarn
+
   rake:
     description: Run Rake commands
     service: web
