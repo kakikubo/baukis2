@@ -7,8 +7,7 @@ describe String do
       s << "D"
       expect(s.size).to eq(4)
     end
-    it "appends a nil" do
-      pending("調査中")
+    xexample "appends a nil" do
       s = "ABC"
       s << nil
       expect(s.size).to eq(4)
