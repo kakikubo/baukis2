@@ -2,6 +2,9 @@
 
 class Staff::TopController < ApplicationController
   def index
-    # render action: "index"
+    # raise IpAddressRejected
+    # raise Forbidden
+    raise ActiveRecord::RecordNotFound
+    render action: "index"
   end
 end
