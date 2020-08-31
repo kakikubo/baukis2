@@ -24,6 +24,12 @@ services:
     image: postgres:11.2-alpine
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+  rails_cred:
+    image: medpeer/rails_cred
+    environment:
+      RAILS_MASTER_KEY:
+    volumes:
+      - ./config/credentials:/app/config/credentials:cached
 volumes:
   bundle:
   rails_cache:
