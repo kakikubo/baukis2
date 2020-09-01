@@ -24,6 +24,8 @@ services:
     image: postgres:11.2-alpine
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
   rails_cred:
     image: medpeer/rails_cred
     environment:

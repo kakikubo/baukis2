@@ -25,3 +25,6 @@ dip rails
 ```
 
 などとして起動します
+
+## テーブルがどのようなカラムをもっているか調べる
+dip rails r StaffMember.columns.each { |c| p [c.name, c.type ] }
