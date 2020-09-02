@@ -21,10 +21,14 @@ Baukis2 は企業向けの顧客管理システム(Ruby on Rails 学習用サン
 
 ```
 dip provision
-dip rails
+dip rails db:migrate
+dip rails db:seed
+dip rails s
 ```
 
 などとして起動します
 
 ## テーブルがどのようなカラムをもっているか調べる
 dip rails r StaffMember.columns.each { |c| p [c.name, c.type ] }
+
+##
