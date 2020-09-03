@@ -15,7 +15,7 @@ RUN bundle install
 
 COPY . /apps
 
-RUN apk add --no-cache openssl
+RUN apk add --no-cache openssl libsass
 
 USER devel
 
