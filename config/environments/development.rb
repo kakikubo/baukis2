@@ -61,4 +61,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.web_console.whitelisted_ips = [ "192.168.0.0/16" ]
+
+  config.sass.inline_source_maps = true
 end

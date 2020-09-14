@@ -10,7 +10,7 @@ services:
       EDITOR: "vim"
       TZ: 'Asia/Tokyo'
     volumes:
-      - .:/apps:cached
+      - .:/apps:delegated
       - rails_cache:/apps/tmp/cache
       - bundle:/usr/local/bundle
     ports:
