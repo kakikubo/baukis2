@@ -27,6 +27,16 @@ dip rails s
 ```
 
 などとして起動します
+最初からデータを入れ直すときは
+
+```
+dip rails db:reset
+```
+## URLアクセス
+
+* http://baukis2.lvh.me:3000/staff
+* http://baukis2.lvh.me:3000/admin
+* http://baukis2.lvh.me:3000/customers
 
 ## テーブルがどのようなカラムをもっているか調べる
 ```
