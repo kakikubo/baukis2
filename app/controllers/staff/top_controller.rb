@@ -5,6 +5,6 @@ class Staff::TopController < Staff::Base
     # raise IpAddressRejected
     # raise Forbidden
     # raise ActiveRecord::RecordNotFound
-    render action: "index"
+    render action: 'index'
   end
 end
