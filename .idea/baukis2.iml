@@ -103,6 +103,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.89.1, Remote: ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-ast (v0.3.0, Remote: ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubocop-rails (v2.7.1, Remote: ruby-2.6.4-p104) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ruby-debug-ide (v0.7.2, Remote: ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.10.1, Remote: ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, Remote: ruby-2.6.4-p104) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.3.0, Remote: ruby-2.6.4-p104) [gem]" level="application" />
