@@ -19,10 +19,10 @@ class Admin::StaffMembersController < Admin::Base
   def create
     @staff_member = StaffMember.new(params[:staff_member])
     if @staff_member.save
-      flash.notice = "職員アカウントを新規登録しました"
+      flash.notice = '職員アカウントを新規登録しました'
       redirect_to :admin_staff_members
     else
-      render action: "new"
+      render action: 'new'
     end
   end
 
@@ -31,17 +31,17 @@ class Admin::StaffMembersController < Admin::Base
     # @staff_member.assign_attributes(params[:staff_member])
     @staff_member.attributes = params[:staff_member] # 上と同じ意味です(attributes= はassign_attributesのエイリアス)
     if @staff_member.save
-      flash.notice = "職員アカウントを更新しました"
+      flash.notice = '職員アカウントを更新しました'
       redirect_to :admin_staff_members
     else
-      render action: "edit"
+      render action: 'edit'
     end
   end
 
   def destroy
     staff_member = StaffMember.find(params[:id])
     staff_member.destroy!
-    flash.notice = "職員アカウントを削除しました。"
+    flash.notice = '職員アカウントを削除しました。'
     redirect_to :admin_staff_members
   end
 end

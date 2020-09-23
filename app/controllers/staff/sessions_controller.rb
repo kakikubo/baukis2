@@ -4,19 +4,17 @@ class Staff::SessionsController < Staff::Base
       redirect_to :staff_root
     else
       @form = Staff::LoginForm.new
-      render action: "new"
+      render action: 'new'
     end
   end
 
   def create
     @form = Staff::LoginForm.new(params[:staff_login_form])
-    if @form.email.present?
-      staff_member = StaffMember.find_by("LOWER(email) = ?", @form.email.downcase)
-    end
+    staff_member = StaffMember.find_by('LOWER(email) = ?', @form.email.downcase) if @form.email.present?
     if Staff::Authenticator.new(staff_member).authenticate(@form.password)
       if staff_member.suspended?
-        flash.now.alert = "アカウントが停止されています"
-        render action: "new"
+        flash.now.alert = 'アカウントが停止されています'
+        render action: 'new'
       else
         session[:staff_member_id] = staff_member.id
         flash.notice = 'ログインしました'
@@ -24,7 +22,7 @@ class Staff::SessionsController < Staff::Base
       end
     else
       flash.now.alert = 'メールアドレスまたはパスワードが正しくありません'
-      render action: "new"
+      render action: 'new'
     end
   end
 
