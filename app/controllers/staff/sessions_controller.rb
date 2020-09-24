@@ -9,7 +9,7 @@ class Staff::SessionsController < Staff::Base
   end
 
   def create
-    @form = Staff::LoginForm.new(params[:staff_login_form])
+    @form = Staff::LoginForm.new(staff_login_form)
     staff_member = StaffMember.find_by('LOWER(email) = ?', @form.email.downcase) if @form.email.present?
     if Staff::Authenticator.new(staff_member).authenticate(@form.password)
       if staff_member.suspended?
@@ -24,6 +24,10 @@ class Staff::SessionsController < Staff::Base
       flash.now.alert = 'メールアドレスまたはパスワードが正しくありません'
       render action: 'new'
     end
+  end
+
+  private def staff_login_form
+    params.require(:staff_login_form).permit(:email, :password)
   end
 
   def destroy
