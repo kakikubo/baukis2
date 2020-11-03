@@ -1,0 +1,40 @@
+version: 2.1
+
+orbs:
+  rails: medpeer/rails@1.2.0
+
+executors:
+  ruby:
+    docker:
+      - image: 'circleci/ruby:2.7.2'
+  ruby_with_db:
+    docker:
+      - image: 'circleci/ruby:2.7.2'
+      - image: 'circleci/mysql:5.6-ram'
+      - image: 'circleci/redis:5-alpine'
+    environment:
+      DATABASE_URL: 'mysql2://root:@127.0.0.1/test'
+      REDIS_HOST: 127.0.0.1
+      REDIS_URL: "redis://localhost:6379/2"
+
+jobs:
+  rb-rubocop:
+    executor: ruby
+    steps:
+      - checkout
+      - rails/bundle-install:
+          restore_only: true
+      - run: bundle exec rubocop --parallel
+
+workflows:
+  rspec:
+    jobs:
+      - rails/rb-deps:
+          executor: ruby
+      - rails/rspec:
+          executor: ruby_with_db
+          requires:
+            - rails/rb-deps
+      - rb-rubocop:
+          requires:
+            - rails/rb-deps
