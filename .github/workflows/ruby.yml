@@ -25,7 +25,6 @@ jobs:
           POSTGRES_DB: postgres
         ports:
           - 5432:5432
-        # needed because the postgres container does not provide a healthcheck
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
