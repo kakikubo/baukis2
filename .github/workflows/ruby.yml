@@ -15,7 +15,6 @@ on:
 
 jobs:
   rspec:
-
     runs-on: ubuntu-latest
     env:
       RAILS_ENV: test
@@ -24,7 +23,7 @@ jobs:
       DATABASE_URL: postgresql://postgres@localhost:15432/postgres?encoding=utf8&pool=5&timeout=5000
     steps:
     - uses: actions/checkout@v2
-    - with:
+      with:
         path: vendor/bundle
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
