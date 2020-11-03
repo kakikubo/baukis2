@@ -27,7 +27,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.3'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'ruby-debug-ide'
