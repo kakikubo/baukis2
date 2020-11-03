@@ -1,40 +1,87 @@
-version: 2.1
-
-orbs:
-  rails: medpeer/rails@1.2.0
-
-executors:
-  ruby:
-    docker:
-      - image: 'circleci/ruby:2.7.2'
-  ruby_with_db:
-    docker:
-      - image: 'circleci/ruby:2.7.2'
-      - image: 'circleci/mysql:5.6-ram'
-      - image: 'circleci/redis:5-alpine'
-    environment:
-      DATABASE_URL: 'mysql2://root:@127.0.0.1/test'
-      REDIS_HOST: 127.0.0.1
-      REDIS_URL: "redis://localhost:6379/2"
-
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
 jobs:
-  rb-rubocop:
-    executor: ruby
+  build:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+        environment:
+          RAILS_ENV: test
+          REDIS_HOST: 127.0.0.1
+          TZ: "Asia/Tokyo"
+          LANG: ja_JP.UTF-8
+          LC_ALL: C.UTF-8
+          LANGUAGE: ja_JP.UTF-8
+          CIRCLE_ARTIFACTS: /tmp/artifacts
+      - image: circleci/mysql:5.6
+        environment:
+          MYSQL_USER: root
+          MYSQL_ROOT_PASSWORD: root
+      - image: redis
     steps:
       - checkout
-      - rails/bundle-install:
-          restore_only: true
-      - run: bundle exec rubocop --parallel
+      - run: echo "${RUBY_VERSION}" > _ruby_version
+      - run: echo "${YARN_VERSION}" > _yarn_version
+
+      # Restore bundle cache
+      - type: restore-cache
+        key: dietplus-server-{{ checksum "_ruby_version" }}-cache-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install -j 4 --path vendor/bundle
+
+      # Store bundle cache
+      - type: save-cache
+        key: dietplus-server-{{ checksum "_ruby_version" }}-cache-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Yarn Setup
+      - restore_cache:
+          keys:
+            - dietplus-server-yarn{{ checksum "_yarn_version" }}-cache-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Yarn Install
+          command: yarn install --cache-folder ~/.cache/yarn
+
+      # Store yarn / webpacker cache
+      - save_cache:
+          key: dietplus-server-yarn{{ checksum "_yarn_version" }}-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - restore_cache:
+          key: bootsnap-cache-{{ .Branch }}-{{ .Revision }}
+      # Database setup
+      - run: mv config/database.yml.ci config/database.yml
+      - run: bin/rails db:create
+      - run: bin/rails db:schema:load
+
+      # Run rubocop
+      - type: shell
+        command: bundle exec rubocop --parallel
+
+      # Run rspec
+      - type: shell
+        command: bundle exec rspec
+
+      # Run brakeman
+      - type: shell
+        command: bundle exec brakeman
+
+      - store_artifacts:
+          path: /tmp/artifacts
+
+      - store_artifacts:
+          path: tmp/screenshots
+
+      - store_test_results:
+          path: /tmp/results
 
 workflows:
-  rspec:
+  version: 2
+  works:
     jobs:
-      - rails/rb-deps:
-          executor: ruby
-      - rails/rspec:
-          executor: ruby_with_db
-          requires:
-            - rails/rb-deps
-      - rb-rubocop:
-          requires:
-            - rails/rb-deps
+      - build
