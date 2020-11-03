@@ -16,11 +16,17 @@ on:
 jobs:
   rspec:
     runs-on: ubuntu-latest
-    env:
-      RAILS_ENV: test
-      DB_HOST: localhost
-      DB_PORT: 15432
-      DATABASE_URL: postgresql://postgres@localhost:15432/postgres?encoding=utf8&pool=5&timeout=5000
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+          - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     - name: Set up Ruby
     # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
     # change this to (see https://github.com/ruby/setup-ruby#versioning):
