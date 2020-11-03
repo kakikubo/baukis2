@@ -1,39 +1,41 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+name: Build
 
-name: Ruby
-
-on:
-  push:
-    branches: [ develop ]
-  pull_request:
-    branches: [ develop ]
+#プルリクエスト作成時に実行(他にもpush時など設定できます)
+on: [pull_request]
 
 jobs:
-  rspec:
+  setup_and_test_execution:
+    #ubuntu環境で動かします
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:10.8
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: postgres
-        ports:
-          - 5432:5432
+
+    #GitHub Actionsでサポートしているrubyのversionは2.6系以降です
     steps:
-      - name: Set up Ruby
-        # To automatically get bug fixes and new Ruby versions for ruby/setup-ruby,
-        # change this to (see https://github.com/ruby/setup-ruby#versioning):
-        # uses: ruby/setup-ruby@v1
-        uses: ruby/setup-ruby@ec106b438a1ff6ff109590de34ddc62c540232e0
+      - uses: actions/checkout@v1
+      - name: Setup Ruby version
+        uses: actions/setup-ruby@master
         with:
-          ruby-version: 2.6.4
-      - name: Install dependencies
-        run: bundle install
+          ruby-version: 2.6.x
+
+      #MySQLをインストール
+      - name: Install dependent libralies
+        run: sudo apt-get install libmysqlclient-dev
+
+      - name: Setup bundler
+        run: gem install bundler
+
+      - name: bundle install
+        run: |
+          bundle install --jobs 4 --retry 3
+
+      #test用に用意したdatabase.yml.ciをコピー、テスト環境用のDBを作成
+      - name: Setup Database
+        run: |
+          bundle exec rake db:create
+          bundle exec rake db:schema:load
+        env:
+          RAILS_ENV: test
+
       - name: Run RSpec
         run: bundle exec rspec
+        env:
+          RAILS_ENV: test
