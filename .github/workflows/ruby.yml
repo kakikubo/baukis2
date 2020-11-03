@@ -14,10 +14,13 @@ on:
     branches: [ develop ]
 
 jobs:
-  test:
+  rspec:
 
     runs-on: ubuntu-latest
-
+    env:
+      RAILS_ENV: test
+      DB_HOST: localhost
+      DB_PORT: 15432
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
