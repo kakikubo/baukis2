@@ -14,7 +14,7 @@ jobs:
       - name: Setup Ruby version
         uses: actions/setup-ruby@master
         with:
-          ruby-version: 2.6.4
+          ruby-version: 2.6.x
 
       #MySQLをインストール
       - name: Install dependent libralies
