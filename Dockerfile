@@ -1,4 +1,4 @@
-FROM oiax/rails6-deps:latest
+FROM kakikubo/rails6-deps:latest
 
 ARG UID=1000
 ARG GID=1000
