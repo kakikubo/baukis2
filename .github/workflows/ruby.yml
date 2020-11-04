@@ -1,7 +1,7 @@
 name: Build
 
 #プルリクエスト作成時に実行(他にもpush時など設定できます)
-on: [pull_request]
+on: [ pull_request ]
 
 jobs:
   setup_and_test_execution:
@@ -35,8 +35,12 @@ jobs:
           bundle exec rake db:schema:load
         env:
           RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
 
       - name: Run RSpec
         run: bundle exec rspec
         env:
           RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
