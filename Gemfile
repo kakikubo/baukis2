@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
-gem 'rails', '~> 6.0.0'
+gem 'rails', '~> 6.0.3'
 # gem "sass-rails", "~> 5"
 gem 'jbuilder', '~> 2.10'
 gem 'sassc-rails'
