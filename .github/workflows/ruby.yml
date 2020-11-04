@@ -8,9 +8,20 @@ jobs:
     #ubuntu環境で動かします
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:11
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     #GitHub Actionsでサポートしているrubyのversionは2.6系以降です
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+
       - name: Setup Ruby version
         uses: actions/setup-ruby@master
         with:
@@ -23,9 +34,25 @@ jobs:
       - name: Setup bundler
         run: gem install bundler
 
+      - name: Cache gems
+        uses: actions/cache@2.1.2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gem-
+      - name: Cache node modules
+        uses: actions/cache@2.1.2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: bundle install
         run: |
-          bundle install --jobs 4 --retry 3
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
+      - name: yarn install
+        run: yarn install --check-files
 
       #test用に用意したdatabase.yml.ciをコピー、テスト環境用のDBを作成
       - name: Setup Database
