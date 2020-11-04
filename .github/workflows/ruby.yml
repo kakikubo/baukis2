@@ -28,8 +28,8 @@ jobs:
           ruby-version: 2.6.x
 
       #MySQLをインストール
-      - name: Install dependent libralies
-        run: sudo apt-get install libmysqlclient-dev
+      #- name: Install dependent libralies
+      #  run: sudo apt-get install libmysqlclient-dev
 
       - name: Setup bundler
         run: gem install bundler
@@ -54,7 +54,6 @@ jobs:
       - name: yarn install
         run: yarn install --check-files
 
-      #test用に用意したdatabase.yml.ciをコピー、テスト環境用のDBを作成
       - name: Setup Database
         run: |
           cp config/database.yml.github-actions config/database.yml
