@@ -12,8 +12,10 @@ class StaffMember < ApplicationRecord
     self.given_name  = normalize_as_name(given_name)
     self.family_name_kana = normalize_as_furigana(family_name_kana)
     self.given_name_kana = normalize_as_furigana(given_name_kana)
+    self.email = normalize_as_email(email)
   end
 
+  validates :email, presence: true, "valid_email_2/email": true, uniqueness: { case_sensitive: false }
   validates :family_name, :given_name, presence: true
   validates :family_name_kana, :given_name_kana, presence: true,
                                                  format: { with: KATAKANA_REGEXP, allow_blank: true }
