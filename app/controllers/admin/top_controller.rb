@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-class Admin::TopController < Admin::Base
-  skip_before_action :authorize
+module Admin
+  class TopController < Admin::Base
+    skip_before_action :authorize
 
-  def index
-    if current_administrator
-      render action: 'dashboard'
-    else
-      render action: 'index'
+    def index
+      if current_administrator
+        render action: 'dashboard'
+      else
+        render action: 'index'
+      end
     end
   end
 end

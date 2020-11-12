@@ -1,18 +1,22 @@
-class Staff::ChangePasswordForm
-  include ActiveModel::Model
+# frozen_string_literal: true
 
-  attr_accessor :object, :current_password, :new_password, :new_password_confirmation
+module Staff
+  class ChangePasswordForm
+    include ActiveModel::Model
 
-  validates :new_password, presence: true, confirmation: true
+    attr_accessor :object, :current_password, :new_password, :new_password_confirmation
 
-  validate do
-    errors.add(:current_password, :wrong) unless Staff::Authenticator.new(object).authenticate(current_password)
-  end
+    validates :new_password, presence: true, confirmation: true
 
-  def save
-    if valid?
-      object.password = new_password
-      object.save!
+    validate do
+      errors.add(:current_password, :wrong) unless Staff::Authenticator.new(object).authenticate(current_password)
+    end
+
+    def save
+      if valid?
+        object.password = new_password
+        object.save!
+      end
     end
   end
 end

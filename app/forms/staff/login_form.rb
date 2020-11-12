@@ -1,5 +1,9 @@
-class Staff::LoginForm
-  include ActiveModel::Model
+# frozen_string_literal: true
 
-  attr_accessor :email, :password
+module Staff
+  class LoginForm
+    include ActiveModel::Model
+
+    attr_accessor :email, :password
+  end
 end

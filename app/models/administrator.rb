@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Administrator < ApplicationRecord
   def password=(raw_password)
     if raw_password.is_a?(String)

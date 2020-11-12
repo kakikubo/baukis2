@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe '職員による自分のアカウントの管理', 'ログイン前' do
