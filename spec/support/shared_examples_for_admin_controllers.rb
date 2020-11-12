@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples 'a protected admin controller' do |controller|
   let(:args) do
     {

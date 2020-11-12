@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   config.exceptions_app = lambda { |env|
     request = ActionDispatch::Request.new(env)

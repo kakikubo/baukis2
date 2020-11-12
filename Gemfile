@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem 'jbuilder', '~> 2.10'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 6.0.3'
-gem 'jbuilder', '~> 2.10'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.2'
@@ -26,12 +28,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'debase'
   gem 'listen', '>= 3.0.5', '< 3.4'
+  gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
   gem 'ruby-debug-ide'
-  gem 'debase'
-  gem 'pry-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'

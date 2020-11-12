@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StaffEvent < ApplicationRecord
   self.inheritance_column = nil
 
@@ -5,10 +7,10 @@ class StaffEvent < ApplicationRecord
   alias_attribute :occurred_at, :created_at
 
   DESCRIPTION = {
-      logged_in: "ログイン",
-      logged_out: "ログアウト",
-      rejected: "ログイン拒否"
-  }
+    logged_in: 'ログイン',
+    logged_out: 'ログアウト',
+    rejected: 'ログイン拒否'
+  }.freeze
 
   def description
     DESCRIPTION[type.to_sym]

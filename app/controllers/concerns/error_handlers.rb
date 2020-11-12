@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module ErrorHandlers
   extend ActiveSupport::Concern
 
@@ -9,8 +11,8 @@ module ErrorHandlers
     rescue_from ActionController::ParameterMissing, with: :rescue400
   end
 
-  private def rescue400(e)
-    render "errors/bad_request", status: 400
+  private def rescue400(_e)
+    render 'errors/bad_request', status: 400
   end
 
   private def rescue403(e)

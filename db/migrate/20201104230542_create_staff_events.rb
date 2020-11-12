@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateStaffEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :staff_events do |t|
@@ -7,6 +9,6 @@ class CreateStaffEvents < ActiveRecord::Migration[6.0]
     end
 
     add_index :staff_events, :created_at
-    add_index :staff_events, [ :staff_member_id, :created_at]
+    add_index :staff_events, %i[staff_member_id created_at]
   end
 end
