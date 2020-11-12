@@ -1,5 +1,36 @@
+# frozen_string_literal: true
+
 class StaffMember < ApplicationRecord
+  include StringNormalizer
+
   has_many :events, class_name: 'StaffEvent', dependent: :destroy
+
+  HUMAN_NAME_REGEX = /\A[\p{han}\p{hiragana}\p{katakana}\u{30fc}A-Za-z]+\z/.freeze
+  KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/.freeze
+
+  before_validation do
+    self.family_name = normalize_as_name(family_name)
+    self.given_name  = normalize_as_name(given_name)
+    self.family_name_kana = normalize_as_furigana(family_name_kana)
+    self.given_name_kana = normalize_as_furigana(given_name_kana)
+    self.email = normalize_as_email(email)
+  end
+
+  validates :email, presence: true, "valid_email_2/email": true, uniqueness: { case_sensitive: false }
+  validates :family_name, :given_name, presence: true,
+                                       format: { with: HUMAN_NAME_REGEX, allow_blank: true }
+  validates :family_name_kana, :given_name_kana, presence: true,
+                                                 format: { with: KATAKANA_REGEXP, allow_blank: true }
+  validates :start_date, presence: true, date: {
+    after_or_equal_to: Date.new(2000, 1, 1),
+    before: ->(_obj) { 1.year.from_now.to_date },
+    allow_blank: true
+  }
+  validates :end_date, date: {
+    after: :start_date,
+    before: ->(_obj) { 1.year.from_now.to_date },
+    allow_blank: true
+  }
 
   def password=(raw_password)
     if raw_password.is_a?(String)
