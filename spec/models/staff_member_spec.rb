@@ -19,7 +19,6 @@ RSpec.describe StaffMember, type: :model do
   end
 
   describe '値の正規化' do
-
     example 'email前後の空白を除去' do
       member = create(:staff_member, email: ' test@example.com ')
       expect(member.email).to eq('test@example.com')
@@ -49,6 +48,16 @@ RSpec.describe StaffMember, type: :model do
   describe 'バリデーション' do
     example '@を2個含むemailは無効' do
       member = build(:staff_member, email: 'test@@example.com')
+      expect(member).not_to be_valid
+    end
+
+    example 'アルファベット表記の family_name は有効' do
+      member = build(:staff_member, family_name: 'Smith')
+      expect(member).to be_valid
+    end
+
+    example '姓に対して漢字、ひらがな、カタカナ、アルファベット以外の文字列は無効' do
+      member = build(:staff_member, family_name: '試験@')
       expect(member).not_to be_valid
     end
 

@@ -5,6 +5,7 @@ class StaffMember < ApplicationRecord
 
   has_many :events, class_name: 'StaffEvent', dependent: :destroy
 
+  HUMAN_NAME_REGEX = /\A[\p{han}\p{hiragana}\p{katakana}\u{30fc}A-Za-z]+\z/.freeze
   KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/.freeze
 
   before_validation do
@@ -16,18 +17,19 @@ class StaffMember < ApplicationRecord
   end
 
   validates :email, presence: true, "valid_email_2/email": true, uniqueness: { case_sensitive: false }
-  validates :family_name, :given_name, presence: true
+  validates :family_name, :given_name, presence: true,
+                                       format: { with: HUMAN_NAME_REGEX, allow_blank: true }
   validates :family_name_kana, :given_name_kana, presence: true,
                                                  format: { with: KATAKANA_REGEXP, allow_blank: true }
   validates :start_date, presence: true, date: {
-      after_or_equal_to: Date.new(2000, 1, 1),
-      before: -> (obj) { 1.year.from_now.to_date },
-      allow_blank: true
+    after_or_equal_to: Date.new(2000, 1, 1),
+    before: ->(_obj) { 1.year.from_now.to_date },
+    allow_blank: true
   }
   validates :end_date, date: {
-      after: :start_date,
-      before: -> (obj) { 1.year.from_now.to_date },
-      allow_blank: true
+    after: :start_date,
+    before: ->(_obj) { 1.year.from_now.to_date },
+    allow_blank: true
   }
 
   def password=(raw_password)

@@ -15,7 +15,7 @@ class Staff::PasswordsController < Staff::Base
       redirect_to :staff_account
     else
       flash.now.alert = '入力に誤りがあります'
-      render action :edit
+      render action: :edit
     end
   end
 
