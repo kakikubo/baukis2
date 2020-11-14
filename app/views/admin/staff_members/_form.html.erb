@@ -1,3 +1,4 @@
+<% p = StaffMemberFormPresenter.new(f, self) %>
 <div class="notes">
   <span class="mark">*</span>
 </div>
@@ -11,16 +12,8 @@
     <%= f.password_field :password, size: 32, required: true %>
   </div>
 <% end %>
-<div>
-  <%= f.label :family_name, "氏名", class: "required" %>
-  <%= f.text_field :family_name, required: true %>
-  <%= f.text_field :given_name, required: true %>
-</div>
-<div>
-  <%= f.label :family_name_kana, "フリガナ", class: "required" %>
-  <%= f.text_field :family_name_kana, required: true %>
-  <%= f.text_field :given_name_kana, required: true %>
-</div>
+<%= p.full_name_block(:family_name, :given_name, '氏名', required: true) %>
+<%= p.full_name_block(:family_name_kana, :given_name_kana, 'フリガナ', required: true) %>
 <div>
   <%= f.label :start_date, "入社日", class: "required" %>
   <%= f.date_field :start_date, required: true %>
