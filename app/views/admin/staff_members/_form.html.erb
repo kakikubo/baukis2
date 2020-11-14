@@ -1,28 +1,9 @@
 <% p = StaffMemberFormPresenter.new(f, self) %>
-<div class="notes">
-  <span class="mark">*</span>
-</div>
-<div>
-  <%= f.label :email, "メールアドレス", class: "required" %>
-  <%= f.email_field :email, size: 32, required: true %>
-</div>
-<% if f.object.new_record? %>
-  <div>
-    <%= f.label :password, "パスワード", class: "required" %>
-    <%= f.password_field :password, size: 32, required: true %>
-  </div>
-<% end %>
+<%= p.notes %>
+<%= p.text_field_block(:email, 'メールアドレス', size: 32, required: true) %>
+<%= p.password_field_block(:password, 'パスワード', size: 32, required: true) %>
 <%= p.full_name_block(:family_name, :given_name, '氏名', required: true) %>
 <%= p.full_name_block(:family_name_kana, :given_name_kana, 'フリガナ', required: true) %>
-<div>
-  <%= f.label :start_date, "入社日", class: "required" %>
-  <%= f.date_field :start_date, required: true %>
-</div>
-<div>
-  <%= f.label :end_date, "退職日" %>
-  <%= f.date_field :end_date %>
-</div>
-<div class="check-boxes">
-  <%= f.check_box :suspended %>
-  <%= f.label :suspended, "アカウント停止" %>
-</div>
+<%= p.date_field_block(:start_date, '入社日', required: true) %>
+<%= p.date_field_block(:end_date, '退職日', required: true) %>
+<%= p.suspended_check_box %>
