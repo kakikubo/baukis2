@@ -7,7 +7,7 @@
     m << q.full_name_block(:family_name, :given_name, '氏名')
     m << q.full_name_block(:family_name_kana, :given_name_kana, 'フリガナ')
     m << q.date_field_block(:start_date, '入社日')
-    m << q.date_field_block(:end_date, '退職日')
+    m << q.date_field_block(:end_date, '退職日', required: false)
   end
   m << p.suspended_check_box
 end %>
