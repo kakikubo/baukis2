@@ -1,6 +1,6 @@
 class StaffMemberFormPresenter < FormPresenter
   def full_name_block(name1, name2, label_text, options = {})
-    markup(:div) do |m|
+    markup(:div, class: 'input-block') do |m|
       m << label(name1, label_text,
                  class: options[:required] ? 'required' : nil)
       m << text_field(name1, options)
