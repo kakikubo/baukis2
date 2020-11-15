@@ -29,6 +29,9 @@ div#wrapper {
           font-size: $small;
           span.mark { color: $red; }
         }
+        div.input-block {
+          input { margin-right: $narrow * 2; }
+        }
         div.check-boxes, div.radio-buttons {
           label {
             display: inline-block;
@@ -45,6 +48,11 @@ div#wrapper {
           padding: 0;
           label { color: $red; }
           input { background-color: $pink; }
+        }
+        div.error-message {
+          color: $red;
+          font-size: $small;
+          padding: 0 $very_wide;
         }
       }
     }
