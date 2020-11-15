@@ -8,7 +8,11 @@ module Staff
       # raise IpAddressRejected
       # raise Forbidden
       # raise ActiveRecord::RecordNotFound
-      render action: 'index'
+      if current_staff_member
+        render action: 'dashboard'
+      else
+        render action: 'index'
+      end
     end
   end
 end
