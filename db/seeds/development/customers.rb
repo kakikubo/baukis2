@@ -31,7 +31,7 @@ company_names = %w[OIAX ABC XYZ]
 10.times do |n|
   10.times do |m|
     fn = family_names[n].split(':')
-    gn = given_names[n].split(':')
+    gn = given_names[m].split(':')
 
     c = Customer.create!(
       email: "#{fn[2]}.#{gn[2]}@example.jp",
