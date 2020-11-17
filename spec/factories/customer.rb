@@ -11,14 +11,4 @@ FactoryBot.define do
     association :home_address, strategy: :build
     association :work_address, strategy: :build
   end
-
-  factory :work_address do
-    company_name { "テスト" }
-    division_name { "開発部" }
-    postal_code { "1050000" }
-    prefecture { "東京都"}
-    city { "港区" }
-    address1 { "試験 1-1-1" }
-    address2 { "" }
-  end
 end
