@@ -20,7 +20,7 @@ class Staff::CustomerForm
   end
 
   def valid?
-    customer.valid? && customer.home_address.valid? && customer.work_address.valid?
+    [customer, customer.home_address, customer.work_address].map(&:valid?).all?
   end
 
   def save
