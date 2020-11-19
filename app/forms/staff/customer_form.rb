@@ -20,8 +20,18 @@ class Staff::CustomerForm
     self.inputs_work_address = params[:inputs_work_address] == "1"
 
     customer.assign_attributes(customer_params)
-    customer.home_address.assign_attributes(home_address_params) if inputs_home_address
-    customer.work_address.assign_attributes(work_address_params) if inputs_work_address
+
+    if inputs_home_address
+      customer.home_address.assign_attributes(home_address_params)
+    else
+      customer.home_address.mark_for_destruction
+    end
+
+    if inputs_work_address
+      customer.work_address.assign_attributes(work_address_params)
+    else
+      customer.work_address.mark_for_destruction
+    end
   end
 
   private def customer_params
