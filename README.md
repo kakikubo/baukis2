@@ -34,9 +34,15 @@ dip rails db:reset
 ```
 ## URLアクセス
 
-* http://baukis2.lvh.me:3000/staff
+* http://baukis2.lvh.me:3000/ (staffです)
 * http://baukis2.lvh.me:3000/admin
 * http://baukis2.lvh.me:3000/customers
+
+## テスト
+
+```
+dip rspec
+```
 
 ## テーブルがどのようなカラムをもっているか調べる
 ```
