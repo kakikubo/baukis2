@@ -9,7 +9,7 @@ class Staff::CustomerForm
     @customer = customer
     @customer ||= Customer.new(gender: 'male')
     (2 - @customer.personal_phones.size).times do
-      @customer.personal.phones.build
+      @customer.personal_phones.build
     end
     self.inputs_home_address = @customer.home_address.present?
     self.inputs_work_address = @customer.work_address.present?
