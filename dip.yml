@@ -39,6 +39,10 @@ interaction:
     service: web
     command: bundle exec rubocop
 
+  edit_cred:
+    description: Edit credentials.yml.enc
+    service: rails_cred
+
   rails:
     description: Run Rails commands
     service: web

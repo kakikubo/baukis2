@@ -10,7 +10,7 @@ services:
       EDITOR: "vim"
       TZ: 'Asia/Tokyo'
     volumes:
-      - .:/apps:cached
+      - .:/apps:delegated
       - rails_cache:/apps/tmp/cache
       - bundle:/usr/local/bundle
     ports:
@@ -24,6 +24,14 @@ services:
     image: postgres:11.2-alpine
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "15432:5432"
+  rails_cred:
+    image: medpeer/rails_cred
+    environment:
+      RAILS_MASTER_KEY:
+    volumes:
+      - ./config/credentials:/app/config/credentials:cached
 volumes:
   bundle:
   rails_cache:
