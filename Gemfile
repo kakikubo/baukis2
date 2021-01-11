@@ -3,12 +3,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.2'
 
 gem 'jbuilder', '~> 2.10'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 5.0'
-gem 'rails', '~> 6.0.3'
+gem 'puma', '~> 5.1'
+gem 'rails', '~> 6.1.1'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 5.2'
@@ -29,7 +29,7 @@ end
 
 group :development do
   gem 'debase'
-  gem 'listen', '>= 3.0.5', '< 3.4'
+  gem 'listen', '>= 3.0.5', '< 3.5'
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
