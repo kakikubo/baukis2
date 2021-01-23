@@ -1,3 +1,5 @@
+![Build](https://github.com/kakikubo/baukis2/workflows/Build/badge.svg)
+
 # Baukis2 - 顧客管理システム
 
 ## 説明
