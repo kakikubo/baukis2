@@ -34,6 +34,11 @@ interaction:
       RAILS_ENV: test
     command: bundle exec rspec
 
+  brakeman:
+    description: Run brakeman
+    service: web
+    command: bundle exec brakeman
+
   rubocop:
     description: Run rubocop
     service: web
@@ -49,7 +54,7 @@ interaction:
     command: bundle exec rails
     subcommands:
       s:
-        description: Run Rails server at http://booking-api.lvh.me:13000
+        description: Run Rails server at http://baukis2.lvh.me:3000
         service: web
         compose:
           run_options: [service-ports]
