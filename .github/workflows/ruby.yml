@@ -34,7 +34,7 @@ jobs:
       - name: Setup bundler
         run: gem install bundler
 
-      - name: Cache gems
+      - name: Cache gems test
         uses: actions/cache@v2
         with:
           path: vendor/bundle
