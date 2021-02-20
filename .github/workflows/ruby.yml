@@ -65,7 +65,7 @@ jobs:
           POSTGRES_PASSWORD: postgres
 
       - name: Run RSpec
-        run: bundle exec rspec
+        run: bundle exec rspec --parallel
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
