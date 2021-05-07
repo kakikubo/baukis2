@@ -11,7 +11,7 @@ gem 'puma', '~> 5.2'
 gem 'rails', '~> 6.1.3'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 5.2'
+gem 'webpacker', '~> 5.3'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
