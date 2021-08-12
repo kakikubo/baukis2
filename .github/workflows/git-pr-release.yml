@@ -7,23 +7,23 @@ on:
 
 jobs:
   create-release-pr:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-18.04
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
 
-    - name: Set up Ruby 2.6
+    - name: Set up Ruby 2.7
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.6.x
+        ruby-version: 2.7.x
 
     - name: Create a release pull request
       env:
         GIT_PR_RELEASE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        GIT_PR_RELEASE_BRANCH_PRODUCTION: main
+        GIT_PR_RELEASE_BRANCH_PRODUCTION: master
         GIT_PR_RELEASE_BRANCH_STAGING: develop
         GIT_PR_RELEASE_LABELS: release
       run: |
-        gem install -N git-pr-release -v "1.2.0"
+        gem install -N git-pr-release -v "1.9.0"
         git-pr-release --no-fetch

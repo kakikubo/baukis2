@@ -7,11 +7,11 @@ ruby '2.7.2'
 
 gem 'jbuilder', '~> 2.11'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 5.2'
-gem 'rails', '~> 6.1.2'
+gem 'puma', '~> 5.4'
+gem 'rails', '~> 6.1.4'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
-gem 'webpacker', '~> 5.2'
+gem 'webpacker', '~> 5.4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -29,7 +29,7 @@ end
 
 group :development do
   gem 'debase'
-  gem 'listen', '>= 3.0.5', '< 3.5'
+  gem 'listen', '>= 3.0.5', '< 3.6'
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
