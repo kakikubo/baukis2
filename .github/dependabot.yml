@@ -1,14 +1,15 @@
 version: 2
+
 updates:
-- package-ecosystem: docker
-  directory: "/"
-  schedule:
-    interval: daily
-    time: "20:00"
-  open-pull-requests-limit: 10
 - package-ecosystem: bundler
   directory: "/"
   schedule:
     interval: daily
-    time: "20:00"
-  open-pull-requests-limit: 10
+    time: "08:00"
+    timezone: Japan
+  reviewers:
+    - "kakikubo"
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  rebase-strategy: disabled
