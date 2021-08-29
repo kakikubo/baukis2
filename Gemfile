@@ -29,7 +29,7 @@ end
 
 group :development do
   gem 'debase'
-  gem 'listen', '>= 3.0.5', '< 3.7'
+  gem 'listen', '>= 3.0.5', '< 3.8'
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
