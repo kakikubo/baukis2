@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module HtmlBuilder
   def markup(tag_name = nil, options = {})
     root = Nokogiri::HTML::DocumentFragment.parse('')

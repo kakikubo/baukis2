@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 city_names = %w[青巻市 赤巻市 黄巻市]
 
 family_names = %w[
@@ -51,8 +53,8 @@ company_names = %w[OIAX ABC XYZ]
       address1: '開発1-2-3',
       address2: 'レイルズハイツ301号室'
     )
-    c.home_address.phones.create!(number: format('03-0000-%04d', n)) if m % 10 == 0
-    next unless m % 3 == 0
+    c.home_address.phones.create!(number: format('03-0000-%04d', n)) if (m % 10).zero?
+    next unless (m % 3).zero?
 
     c.create_work_address!(
       postal_code: format('%07d', rand(10_000_000)),

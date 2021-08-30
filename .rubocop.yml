@@ -1,0 +1,10 @@
+inherit_from: .rubocop_todo.yml
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Layout/LeadingEmptyLines:
+  Exclude:
+    - 'spec/experiments/string_spec.rb'
+
+AllCops:
+  TargetRubyVersion: 2.7.2
