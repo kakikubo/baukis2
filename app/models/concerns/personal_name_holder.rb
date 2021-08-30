@@ -14,9 +14,8 @@ module PersonalNameHolder
       self.given_name_kana = normalize_as_furigana(given_name_kana)
     end
     validates :family_name, :given_name, presence: true,
-              format: { with: HUMAN_NAME_REGEX, allow_blank: true }
+                                         format: { with: HUMAN_NAME_REGEX, allow_blank: true }
     validates :family_name_kana, :given_name_kana, presence: true,
-              format: { with: KATAKANA_REGEXP, allow_blank: true }
+                                                   format: { with: KATAKANA_REGEXP, allow_blank: true }
   end
-
 end

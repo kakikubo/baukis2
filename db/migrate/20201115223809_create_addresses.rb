@@ -14,7 +14,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_index :addresses, [:type, :customer_id], unique: true
+    add_index :addresses, %i[type customer_id], unique: true
     add_foreign_key :addresses, :customers
   end
 end

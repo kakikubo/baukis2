@@ -10,5 +10,4 @@ class UserFormPresenter < FormPresenter
       m << error_messages_for(name2)
     end
   end
-
 end

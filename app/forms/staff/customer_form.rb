@@ -25,8 +25,8 @@ class Staff::CustomerForm
 
   def assign_attributes(params = {})
     @params = params
-    self.inputs_home_address = params[:inputs_home_address] == "1"
-    self.inputs_work_address = params[:inputs_work_address] == "1"
+    self.inputs_home_address = params[:inputs_home_address] == '1'
+    self.inputs_work_address = params[:inputs_work_address] == '1'
 
     customer.assign_attributes(customer_params)
     phones = phone_params(:customer).fetch(:phones)
@@ -75,27 +75,27 @@ class Staff::CustomerForm
 
   private def customer_params
     @params.require(:customer).except(:phones).permit(
-        :email, :password,
-        :family_name, :given_name, :family_name_kana, :given_name_kana,
-        :birthday, :gender
+      :email, :password,
+      :family_name, :given_name, :family_name_kana, :given_name_kana,
+      :birthday, :gender
     )
   end
 
   private def home_address_params
     @params.require(:home_address).except(:phones).permit(
-        :postal_code, :prefecture, :city, :address1, :address2
+      :postal_code, :prefecture, :city, :address1, :address2
     )
   end
 
   private def work_address_params
     @params.require(:work_address).except(:phones).permit(
-        :postal_code, :prefecture, :city, :address1, :address2,
-        :company_name, :division_name
+      :postal_code, :prefecture, :city, :address1, :address2,
+      :company_name, :division_name
     )
   end
 
   private def phone_params(record_name)
     @params.require(record_name)
-        .slice(:phones).permit(phones: [ :number, :primary ])
+           .slice(:phones).permit(phones: %i[number primary])
   end
 end

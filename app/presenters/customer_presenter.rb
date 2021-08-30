@@ -11,6 +11,7 @@ class CustomerPresenter < ModelPresenter
 
   def birthday
     return '' if object.birthday.blank?
+
     object.birthday.strftime('%Y/%m/%d')
   end
 

@@ -9,8 +9,6 @@ module EmailHolder
     end
 
     validates :email, presence: true, "valid_email_2/email": true,
-              uniqueness: { case_sensitive: false }
+                      uniqueness: { case_sensitive: false }
   end
-
-
 end
