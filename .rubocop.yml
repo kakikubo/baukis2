@@ -7,4 +7,5 @@ Layout/LeadingEmptyLines:
     - 'spec/experiments/string_spec.rb'
 
 AllCops:
+  NewCops: enable
   TargetRubyVersion: 2.7.2
