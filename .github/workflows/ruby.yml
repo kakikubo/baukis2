@@ -39,7 +39,8 @@ jobs:
       #- name: Install dependent libralies
       #  run: sudo apt-get install libmysqlclient-dev
       - name: rubocop
-        run: rubocop
+        run: |
+          bundle exec rubocop
 
       - name: Setup bundler
         run: gem install bundler
