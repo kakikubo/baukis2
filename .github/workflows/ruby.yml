@@ -38,6 +38,8 @@ jobs:
       #MySQLをインストール
       #- name: Install dependent libralies
       #  run: sudo apt-get install libmysqlclient-dev
+      - name: rubocop
+        run: rubocop
 
       - name: Setup bundler
         run: gem install bundler
