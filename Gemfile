@@ -30,6 +30,7 @@ end
 group :development do
   gem 'debase'
   gem 'listen', '>= 3.0.5', '< 3.6'
+  gem 'parser', '< 2.7.3'
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
