@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '3.0.2'
 
 gem 'jbuilder', '~> 2.11'
 gem 'pg', '>= 0.18', '< 2.0'
@@ -29,8 +29,7 @@ end
 
 group :development do
   gem 'debase'
-  gem 'listen', '>= 3.0.5', '< 3.6'
-  gem 'parser', '< 2.7.3'
+  gem 'listen', '>= 3.0.5', '< 3.8'
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
