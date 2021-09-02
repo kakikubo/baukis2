@@ -1,7 +1,8 @@
 version: '3'
 services:
   web:
-    build: .
+    image: 'circleci/ruby:3.0.2-node-browsers'
+    # build: .
     command: ["bin/rails", "server", "-b", "0.0.0.0"]
     environment:
       BOOTSNAP_CACHE_DIR: '/usr/local/bundle'
@@ -10,8 +11,8 @@ services:
       EDITOR: "vim"
       TZ: 'Asia/Tokyo'
     volumes:
-      - .:/apps:delegated
-      - rails_cache:/apps/tmp/cache
+      - .:/app:delegated
+      - rails_cache:/app/tmp/cache
       - bundle:/usr/local/bundle
     ports:
       - "3000:3000"
@@ -19,7 +20,9 @@ services:
     depends_on:
       - db
     tty: true
+    stdin_open: true
     user: root
+    working_dir: /app
   db:
     image: postgres:11.2-alpine
     volumes:
