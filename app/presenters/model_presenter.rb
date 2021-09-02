@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ModelPresenter
   include HtmlBuilder
 
@@ -11,10 +13,10 @@ class ModelPresenter
   end
 
   def created_at
-    object.created_at.try(:strftime, "%Y/%m/%d %H:%M:%S")
+    object.created_at.try(:strftime, '%Y/%m/%d %H:%M:%S')
   end
 
   def updated_at
-    object.updated_at.try(:strftime, "%Y/%m/%d %H:%M:%S")
+    object.updated_at.try(:strftime, '%Y/%m/%d %H:%M:%S')
   end
 end

@@ -33,12 +33,11 @@ jobs:
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
         with:
-          ruby-version: 2.7.2
+          ruby-version: 3.0.2
 
       #MySQLをインストール
       #- name: Install dependent libralies
       #  run: sudo apt-get install libmysqlclient-dev
-
       - name: Setup bundler
         run: gem install bundler
 
@@ -61,6 +60,8 @@ jobs:
           bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: yarn install
         run: yarn install --check-files
+      - name: rubocop
+        run: bundle exec rubocop
 
       - name: Setup Database
         run: |

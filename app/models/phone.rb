@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Phone < ApplicationRecord
   include StringNormalizer
 
@@ -6,7 +8,7 @@ class Phone < ApplicationRecord
 
   before_validation do
     self.number = normalize_as_phone_number(number)
-    self.number_for_index = number.gsub(/\D/, "") if number
+    self.number_for_index = number.gsub(/\D/, '') if number
   end
 
   before_create do
