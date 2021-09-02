@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 city_names = %w[青巻市 赤巻市 黄巻市]
 
-family_names = %w{
+family_names = %w[
   佐藤:サトウ:sato
   鈴木:スズキ:suzuki
   高橋:タカハシ:takahashi
@@ -11,9 +13,9 @@ family_names = %w{
   中村:ナカムラ:nakamura
   小林:コバヤシ:kobayashi
   加藤:カトウ:kato
-}
+]
 
-given_names = %w{
+given_names = %w[
   一郎:イチロウ:ichiro
   二郎:ジロウ:jiro
   三郎:サブロウ:saburo
@@ -24,7 +26,7 @@ given_names = %w{
   梅子:ウメコ:umeko
   鶴子:ツルコ:tsuruko
   亀子:カメコ:kameko
-}
+]
 
 company_names = %w[OIAX ABC XYZ]
 
@@ -43,23 +45,19 @@ company_names = %w[OIAX ABC XYZ]
       birthday: 60.years.ago.advance(seconds: rand(40.years)).to_date,
       gender: m < 5 ? 'male' : 'female'
     )
-    if m % 2 == 0
-      c.personal_phones.create!(number: sprintf("090-0000-%04d", n * 10 + m))
-    end
+    c.personal_phones.create!(number: format('090-0000-%04d', n * 10 + m)) if m.even?
     c.create_home_address!(
-      postal_code: sprintf('%07d', rand(10000000)),
+      postal_code: format('%07d', rand(10_000_000)),
       prefecture: Address::PREFECTURE_NAMES.sample,
       city: city_names.sample,
       address1: '開発1-2-3',
       address2: 'レイルズハイツ301号室'
     )
-    if m % 10 == 0
-      c.home_address.phones.create!(number: sprintf("03-0000-%04d", n))
-    end
-    next unless m % 3 == 0
+    c.home_address.phones.create!(number: format('03-0000-%04d', n)) if (m % 10).zero?
+    next unless (m % 3).zero?
 
     c.create_work_address!(
-      postal_code: sprintf('%07d', rand(10000000)),
+      postal_code: format('%07d', rand(10_000_000)),
       prefecture: Address::PREFECTURE_NAMES.sample,
       city: city_names.sample,
       address1: '試験4-5-6',

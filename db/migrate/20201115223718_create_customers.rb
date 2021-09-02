@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateCustomers < ActiveRecord::Migration[6.0]
   def change
     create_table :customers do |t|
@@ -13,7 +15,7 @@ class CreateCustomers < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    add_index :customers, "LOWER(email)", unique: true
-    add_index :customers, [:family_name_kana, :given_name_kana]
+    add_index :customers, 'LOWER(email)', unique: true
+    add_index :customers, %i[family_name_kana given_name_kana]
   end
 end

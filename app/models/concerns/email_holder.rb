@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EmailHolder
   extend ActiveSupport::Concern
 
@@ -8,9 +10,7 @@ module EmailHolder
       self.email = normalize_as_email(email)
     end
 
-    validates :email, presence: true, "valid_email_2/email": true,
-              uniqueness: { case_sensitive: false }
+    validates :email, presence: true, 'valid_email_2/email': true,
+                      uniqueness: { case_sensitive: false }
   end
-
-
 end

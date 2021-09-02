@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class StaffEventPresenter < ModelPresenter
   delegate :member, :description, :occurred_at, to: :object
 
