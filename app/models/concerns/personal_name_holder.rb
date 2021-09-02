@@ -3,8 +3,8 @@
 module PersonalNameHolder
   extend ActiveSupport::Concern
 
-  HUMAN_NAME_REGEX = /\A[\p{han}\p{hiragana}\p{katakana}\u{30fc}A-Za-z]+\z/.freeze
-  KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/.freeze
+  HUMAN_NAME_REGEX = /\A[\p{han}\p{hiragana}\p{katakana}\u{30fc}A-Za-z]+\z/
+  KATAKANA_REGEXP = /\A[\p{katakana}\u{30fc}]+\z/
 
   included do
     include StringNormalizer
