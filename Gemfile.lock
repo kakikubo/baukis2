@@ -257,7 +257,7 @@ GEM
     valid_email2 (4.0.3)
       activemodel (>= 3.2)
       mail (~> 2.5)
-    web-console (4.1.0)
+    web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
