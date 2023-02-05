@@ -1,17 +1,16 @@
 name: Build
 
 #プルリクエスト作成時に実行(他にもpush時など設定できます)
-on: [ pull_request ]
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
-  cancel:
-    name: 'Cancel Previous Runs'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
   rspec_job:
     #ubuntu環境で動かします
     runs-on: ubuntu-18.04
@@ -28,7 +27,7 @@ jobs:
 
     # https://github.com/ruby/setup-ruby
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
