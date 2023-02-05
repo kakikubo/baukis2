@@ -1,17 +1,16 @@
 name: Build
 
 #プルリクエスト作成時に実行(他にもpush時など設定できます)
-on: [ pull_request ]
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize]
+  pull_request:
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
-  cancel:
-    name: 'Cancel Previous Runs'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
   rspec_job:
     #ubuntu環境で動かします
     runs-on: ubuntu-18.04
@@ -27,13 +26,22 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     # https://github.com/ruby/setup-ruby
+    if: |
+      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
+      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     steps:
-      - uses: actions/checkout@v2
-
+      - name: checkout
+        if: ${{ github.event_name != 'pull_request_target' }}
+        uses: actions/checkout@v3
+      - name: checkout pr
+        if: ${{ github.event_name == 'pull_request_target' }}
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
         with:
-          ruby-version: 3.0.2
+          ruby-version: 3.2.0
 
       #MySQLをインストール
       #- name: Install dependent libralies
@@ -41,20 +49,6 @@ jobs:
       - name: Setup bundler
         run: gem install bundler
 
-      - name: Cache gems
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
-      - name: Cache node modules
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
       - name: bundle install
         run: |
           bundle install --jobs 4 --retry 3 --path vendor/bundle

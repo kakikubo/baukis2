@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20_201_119_231_326) do
   enable_extension 'plpgsql'
 
   create_table 'addresses', force: :cascade do |t|
-    t.bigint 'customer_id', null: false
+    t.integer 'customer_id', null: false
     t.string 'type', null: false
     t.string 'postal_code', null: false
     t.string 'prefecture', null: false
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 20_201_119_231_326) do
   end
 
   create_table 'phones', force: :cascade do |t|
-    t.bigint 'customer_id', null: false
-    t.bigint 'address_id'
+    t.integer 'customer_id', null: false
+    t.integer 'address_id'
     t.string 'number', null: false
     t.string 'number_for_index', null: false
     t.boolean 'primary', default: false, null: false
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 20_201_119_231_326) do
   end
 
   create_table 'staff_events', force: :cascade do |t|
-    t.bigint 'staff_member_id', null: false
+    t.integer 'staff_member_id', null: false
     t.string 'type', null: false
     t.datetime 'created_at', null: false
     t.index ['created_at'], name: 'index_staff_events_on_created_at'
