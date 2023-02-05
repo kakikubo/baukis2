@@ -1,7 +1,7 @@
 version: '3'
 services:
   web:
-    image: 'circleci/ruby:3.0.2-node-browsers'
+    image: 'cimg/ruby:3.2.0-browsers'
     # build: .
     command: ["bin/rails", "server", "-b", "0.0.0.0"]
     environment:
