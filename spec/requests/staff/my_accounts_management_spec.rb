@@ -37,6 +37,7 @@ describe '職員による自分のアカウントの管理' do
       expect(response).to redirect_to(staff_login_url)
     end
   end
+
   describe '更新' do
     let(:params_hash) { attributes_for(:staff_member) }
     let(:staff_member) { create(:staff_member) }

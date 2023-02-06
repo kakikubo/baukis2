@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature '職員による顧客管理' do
+describe '職員による顧客管理' do
   include FeaturesSpecHelper
   let(:staff_member) { create(:staff_member) }
   let!(:customer) { create(:customer) }
@@ -12,7 +12,7 @@ feature '職員による顧客管理' do
     login_as_staff_member(staff_member)
   end
 
-  scenario '職員が顧客(基本情報のみ)を追加する' do
+  it '職員が顧客(基本情報のみ)を追加する' do
     click_link '顧客管理'
     first('div.links').click_link '新規登録'
 
@@ -34,7 +34,7 @@ feature '職員による顧客管理' do
     expect(new_customer.work_address).to be_nil
   end
 
-  scenario '職員が顧客、自宅住所、勤務先を追加する' do
+  it '職員が顧客、自宅住所、勤務先を追加する' do
     click_link '顧客管理'
     first('div.links').click_link '新規登録'
 
@@ -74,7 +74,7 @@ feature '職員による顧客管理' do
     expect(new_customer.work_address.company_name).to eq('テスト')
   end
 
-  scenario '職員が顧客、自宅住所、勤務先を更新する' do
+  it '職員が顧客、自宅住所、勤務先を更新する' do
     click_link '顧客管理'
     first('table.listing').click_link '編集'
 
@@ -93,7 +93,7 @@ feature '職員による顧客管理' do
     expect(customer.work_address.company_name).to eq('テスト')
   end
 
-  scenario '職員が生年月日と自宅の郵便番号に無効な値を入力する' do
+  it '職員が生年月日と自宅の郵便番号に無効な値を入力する' do
     click_link '顧客管理'
     first('table.listing').click_link '編集'
 
@@ -108,7 +108,7 @@ feature '職員による顧客管理' do
     expect(page).to have_css('div.field_with_errors input#form_home_address_postal_code')
   end
 
-  scenario '職員が勤務先データのない既存顧客に会社名の情報を追加する' do
+  it '職員が勤務先データのない既存顧客に会社名の情報を追加する' do
     customer.work_address.destroy
     click_link '顧客管理'
     first('table.listing').click_link '編集'
