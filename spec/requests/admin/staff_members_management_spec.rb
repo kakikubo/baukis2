@@ -22,7 +22,7 @@ describe '管理者による職員管理' do
   describe '一覧' do
     example '成功' do
       get admin_staff_members_url
-      expect(response.status).to eq(200)
+      expect(response).to have_http_status(:ok)
     end
 
     example '停止フラグがセットされたら強制的にログアウト' do
