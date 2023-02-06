@@ -22,7 +22,7 @@ describe '職員による自分のアカウントの管理' do
 
     example '成功' do
       get staff_account_url
-      expect(response.status).to eq(200)
+      expect(response).to have_http_status(:ok)
     end
 
     example '停止フラグがセットされたら強制的にログアウト' do
@@ -53,7 +53,7 @@ describe '職員による自分のアカウントの管理' do
       params_hash.merge!(end_date: Date.tomorrow)
       expect do
         patch staff_account_url, params: { id: staff_member.id, staff_member: params_hash }
-      end.not_to change { staff_member.end_date }
+      end.not_to change(staff_member, :end_date)
     end
   end
 end
