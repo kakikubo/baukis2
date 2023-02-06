@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature '職員による顧客電話番号管理' do
+describe '職員による顧客電話番号管理' do
   include FeaturesSpecHelper
   let(:staff_member) { create(:staff_member) }
   let!(:customer) { create(:customer) }
@@ -12,7 +12,7 @@ feature '職員による顧客電話番号管理' do
     login_as_staff_member(staff_member)
   end
 
-  scenario '職員が顧客の電話番号を追加する' do
+  it '職員が顧客の電話番号を追加する' do
     click_link '顧客管理'
     first('table.listing').click_link '編集'
 
@@ -25,7 +25,7 @@ feature '職員による顧客電話番号管理' do
     expect(customer.personal_phones[0].number).to eq('090-0000-0000')
   end
 
-  scenario '職員が顧客の自宅番号を追加する' do
+  it '職員が顧客の自宅番号を追加する' do
     click_link '顧客管理'
     first('table.listing').click_link '編集'
 
@@ -38,7 +38,7 @@ feature '職員による顧客電話番号管理' do
     expect(customer.home_address.phones[0].number).to eq('03-9999-9999')
   end
 
-  scenario '職員が顧客の勤務先電話番号を追加する' do
+  it '職員が顧客の勤務先電話番号を追加する' do
     click_link '顧客管理'
     first('table.listing').click_link '編集'
 
