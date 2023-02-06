@@ -29,12 +29,6 @@ Lint/ShadowingOuterLocalVariable:
 Metrics/AbcSize:
   Max: 86
 
-# Offense count: 3
-# Configuration parameters: CountComments, CountAsOne, ExcludedMethods, AllowedMethods, AllowedPatterns, IgnoredMethods, inherit_mode.
-# AllowedMethods: refine
-Metrics/BlockLength:
-  Max: 32
-
 # Offense count: 1
 # Configuration parameters: AllowedMethods, AllowedPatterns, IgnoredMethods.
 Metrics/CyclomaticComplexity:
