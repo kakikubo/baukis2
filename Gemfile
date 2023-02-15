@@ -7,7 +7,7 @@ ruby '3.2.0'
 
 gem 'jbuilder', '~> 2.11'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 5.6'
+gem 'puma', '~> 6.1'
 gem 'rails', '~> 7.0.4'
 gem 'sassc-rails'
 gem 'turbolinks', '~> 5'
