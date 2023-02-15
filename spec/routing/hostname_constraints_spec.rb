@@ -12,6 +12,7 @@ describe 'ルーティング' do
       action: 'index'
     )
   end
+
   example '管理者トップページ' do
     config = Rails.application.config.baukis2
     url = "http://#{config[:admin][:host]}/#{config[:admin][:path]}/login"
@@ -21,6 +22,7 @@ describe 'ルーティング' do
       action: 'new'
     )
   end
+
   example '顧客トップページ' do
     config = Rails.application.config.baukis2
     url = "http://#{config[:customer][:host]}/#{config[:customer][:path]}"

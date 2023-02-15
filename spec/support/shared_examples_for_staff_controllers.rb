@@ -4,7 +4,7 @@ shared_examples 'a protected staff controller' do |controller|
   let(:args) do
     {
       host: Rails.application.config.baukis2[:staff][:host],
-      controller: controller
+      controller:
     }
   end
 
@@ -27,7 +27,7 @@ shared_examples 'a protected singular staff controller' do |controller|
   let(:args) do
     {
       host: Rails.application.config.baukis2[:staff][:host],
-      controller: controller
+      controller:
     }
   end
 
