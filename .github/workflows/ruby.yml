@@ -2,9 +2,8 @@ name: Build
 
 #プルリクエスト作成時に実行(他にもpush時など設定できます)
 on:
-  pull_request_target:
-    types: [opened, reopened, synchronize]
   pull_request:
+    types: [opened, reopened, synchronize]
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
@@ -13,7 +12,7 @@ concurrency:
 jobs:
   rspec_job:
     #ubuntu環境で動かします
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     services:
       postgres:
@@ -26,22 +25,19 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     # https://github.com/ruby/setup-ruby
-    if: |
-      (github.event_name == 'pull_request_target' && github.actor == 'dependabot[bot]') ||
-      (github.event_name != 'pull_request_target' && github.actor != 'dependabot[bot]')
     steps:
       - name: checkout
-        if: ${{ github.event_name != 'pull_request_target' }}
+        if: ${{ github.event_name != 'pull_request' }}
         uses: actions/checkout@v3
       - name: checkout pr
-        if: ${{ github.event_name == 'pull_request_target' }}
+        if: ${{ github.event_name == 'pull_request' }}
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
         with:
-          ruby-version: 3.2.0
+          ruby-version: 3.2.1
 
       #MySQLをインストール
       #- name: Install dependent libralies

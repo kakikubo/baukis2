@@ -1,8 +1,12 @@
 version: '3'
 services:
   web:
-    image: 'cimg/ruby:3.2.0-browsers'
-    # build: .
+    # image: 'cimg/ruby:3.2.0-browsers'
+    build:
+      context: .
+      dockerfile: ./devenv/web/Dockerfile
+      args:
+        IMAGE_FILE: ${IMAGE_FILE:-ruby}
     command: ["bin/rails", "server", "-b", "0.0.0.0"]
     environment:
       BOOTSNAP_CACHE_DIR: '/usr/local/bundle'
@@ -11,18 +15,24 @@ services:
       EDITOR: "vim"
       TZ: 'Asia/Tokyo'
     volumes:
-      - .:/app:delegated
-      - rails_cache:/app/tmp/cache
-      - bundle:/usr/local/bundle
+      - .:/work/app:cached
+      - rails_cache:/work/app/tmp/cache
+      - bundler:/usr/local/bundle
+      # exclude volumes
+      - /work/app/vendor
+      - /work/app/tmp
+      - /work/app/log
+      - /work/app/.git
+      - /work/app/node_modules
+    working_dir: /work/app
+    user: root
     ports:
-      - "3000:3000"
-      - "3035:3035"
+      - "33000:3000"
+      - "33035:3035"
     depends_on:
       - db
     tty: true
     stdin_open: true
-    user: root
-    working_dir: /app
   db:
     image: postgres:11.2-alpine
     volumes:
@@ -36,6 +46,6 @@ services:
     volumes:
       - ./config/credentials:/app/config/credentials:cached
 volumes:
-  bundle:
+  bundler:
   rails_cache:
   db:
