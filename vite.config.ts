@@ -7,4 +7,19 @@ export default defineConfig({
     RubyPlugin(),
     FullReload(['config/routes.rb', 'app/views/**/*'], { delay: 100 })
   ],
+  build: {
+    outDir: 'public/packs',
+    manifest: true,
+    rollupOptions: {
+      input: 'app/frontend/packs/application.mjs'
+    }
+  },
+  server: {
+    proxy: {
+      '/rails': {
+        target: 'http://localhost:3000',
+        changeOrigin: true
+      }
+    }
+  }
 })
