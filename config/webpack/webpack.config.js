@@ -7,7 +7,7 @@ module.exports = {
   mode,
   devtool: "source-map",
   entry: {
-    application: "./app/javascript/application_legacy.js"
+    application: "./app/javascript/application.js"
   },
   output: {
     filename: "[name].js",
