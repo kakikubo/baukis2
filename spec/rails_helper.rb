@@ -72,13 +72,14 @@ RSpec.configure do |config|
   config.include ActiveSupport::Testing::TimeHelpers
 
   Capybara.register_driver :remote_chrome do |app|
-    caps = ::Selenium::WebDriver::Options.chrome(
+    caps = Selenium::WebDriver::Options.chrome(
       'goog:chromeOptions' => {
         'args' => %w[no-sandbox disable-dev-shm-usage headless disable-gpu window-size=1680,1050 lang=ja]
       }
     )
     if ENV['SELENIUM_DRIVER_URL'].present?
-      Capybara::Selenium::Driver.new(app, browser: :remote, url: ENV['SELENIUM_DRIVER_URL'], options: caps).tap do |driver|
+      Capybara::Selenium::Driver.new(app, browser: :remote, url: ENV['SELENIUM_DRIVER_URL'],
+                                          options: caps).tap do |driver|
         # NOTE: chrome(v77未満)用にダウンロードディレクトリを設定
         driver.browser.download_path = DownloadHelper::PATH.to_s
       end
@@ -93,7 +94,7 @@ RSpec.configure do |config|
     driven_by :rack_test
   end
 
-  config.before(:each, type: :system, js: true) do
+  config.before(:each, js: true, type: :system) do
     driven_by :remote_chrome
     if ENV['SELENIUM_DRIVER_URL'].present?
       Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
