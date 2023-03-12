@@ -23,7 +23,7 @@ default: &default
   host: <%= ENV['PGSQL_HOST'] || 'db' %>
   port: <%= ENV['PGSQL_PORT'] || '5432' %>
   username: postgres
-  password: ""
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
 
 development:
   <<: *default

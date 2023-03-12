@@ -1,41 +1,67 @@
 version: '3'
 services:
   web:
-    image: 'cimg/ruby:3.2.0-browsers'
-    # build: .
+    # image: 'cimg/ruby:3.2.0-browsers'
+    build:
+      context: .
+      dockerfile: ./devenv/web/Dockerfile
+      args:
+        IMAGE_FILE: ${IMAGE_FILE:-ruby}
     command: ["bin/rails", "server", "-b", "0.0.0.0"]
     environment:
+      IMAGE_FILE: ${IMAGE_FILE:-ruby}
       BOOTSNAP_CACHE_DIR: '/usr/local/bundle'
       WEBPACKER_DEV_SERVER_HOST: "0.0.0.0"
       RAILS_SERVE_STATIC_FILES: "1"
+      POSTGRES_PASSWORD: secret
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      RAILS_ENV: ${RAILS_ENV:-development}
+      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub    #追加、どのコンテナのブラウザを使用するか指定
       EDITOR: "vim"
       TZ: 'Asia/Tokyo'
     volumes:
-      - .:/app:delegated
-      - rails_cache:/app/tmp/cache
-      - bundle:/usr/local/bundle
+      - .:/work/app:cached
+      - rails_cache:/work/app/tmp/cache
+      - bundler:/usr/local/bundle
+      # exclude volumes
+      - /work/app/vendor
+      - /work/app/tmp
+      - /work/app/log
+      - /work/app/.git
+      - /work/app/node_modules
     ports:
-      - "3000:3000"
+      - "23000:3000"
       - "3035:3035"
     depends_on:
       - db
     tty: true
     stdin_open: true
     user: root
-    working_dir: /app
+    working_dir: /work/app
   db:
-    image: postgres:11.2-alpine
+    image: postgres:14.2-alpine
+    environment:
+      POSTGRES_PASSWORD: secret
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     ports:
-      - "15432:5432"
+      - "25432:5432"
   rails_cred:
     image: medpeer/rails_cred
     environment:
       RAILS_MASTER_KEY:
     volumes:
       - ./config/credentials:/app/config/credentials:cached
+  chrome:
+    build:
+      context: .
+      dockerfile: ./devenv/chrome/Dockerfile
+      args:
+        CHROME_IMAGE: ${CHROME_IMAGE:-selenium/standalone-chrome}
+      # image: selenium/standalone-chrome:latest
+    ports:
+      - '4444:4444'
 volumes:
-  bundle:
+  bundler:
   rails_cache:
   db:
