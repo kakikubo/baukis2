@@ -35,3 +35,7 @@
 yarn-debug.log*
 .yarn-integrity
 /.idea/*
+vendor/bundle/*
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

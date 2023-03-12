@@ -13,10 +13,10 @@ module Staff
     end
 
     def save
-      if valid?
-        object.password = new_password
-        object.save!
-      end
+      return unless valid?
+
+      object.password = new_password
+      object.save!
     end
   end
 end
