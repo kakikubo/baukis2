@@ -54,6 +54,7 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  config.assets.check_precompiled_asset = false
   config.assets.compile = true
 
   # Raises error for missing translations.
