@@ -16,3 +16,19 @@ updates:
   ignore:
     - dependency-name: "*"
       update-types: ["version-update:semver-patch"]
+- package-ecosystem: github-actions
+  directory: '/'
+  schedule:
+    interval: daily
+    time: "08:00"
+    timezone: Japan
+  open-pull-requests-limit: 10
+  assignees:
+    - kakikubo
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
+  labels:
+    - "GH Actions"
+    - "dependencies"
