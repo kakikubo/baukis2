@@ -226,3 +226,6 @@ Style/GuardClause:
 Style/StringLiterals:
   Exclude:
     - 'spec/experiments/string_spec.rb'
+
+FactoryBot/AssociationStyle:
+  EnforcedStyle: explicit
