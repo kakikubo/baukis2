@@ -33,6 +33,7 @@ gem 'net-smtp', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -48,8 +49,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'factory_bot_rails'
+  gem 'capybara-playwright-driver'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
   gem 'webdrivers'
 end
