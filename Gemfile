@@ -3,13 +3,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.1'
+ruby '3.2.2'
 
 gem 'importmap-rails'
 gem 'jbuilder', '~> 2.11'
 gem 'jsbundling-rails'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 6.1'
+gem 'puma', '~> 6.3'
 gem 'rails', '~> 7.0.4'
 gem 'sassc-rails'
 gem 'stimulus-rails'
@@ -33,6 +33,7 @@ gem 'net-smtp', require: false
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -48,8 +49,7 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
-  gem 'factory_bot_rails'
+  gem 'capybara-playwright-driver'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
   gem 'webdrivers'
 end

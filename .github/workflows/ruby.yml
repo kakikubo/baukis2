@@ -37,7 +37,7 @@ jobs:
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
         with:
-          ruby-version: 3.2.1
+          ruby-version: 3.2.2
 
       #MySQLをインストール
       #- name: Install dependent libralies
@@ -50,6 +50,8 @@ jobs:
           bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: yarn install
         run: yarn install --check-files
+      - name: Install Playwright
+        run: yarn playwright install chromium
       - name: rubocop
         run: bundle exec rubocop
 

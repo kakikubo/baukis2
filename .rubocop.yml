@@ -1,6 +1,8 @@
 require:
   - rubocop-rspec
   - rubocop-rails
+  - rubocop-capybara
+  - rubocop-factory_bot
 inherit_from: .rubocop_todo.yml
 
 # Offense count: 1
