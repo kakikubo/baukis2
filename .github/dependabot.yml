@@ -32,3 +32,19 @@ updates:
   labels:
     - "GH Actions"
     - "dependencies"
+- package-ecosystem: github-actions
+  directory: '/'
+  schedule:
+    interval: daily
+    time: '00:00'
+  open-pull-requests-limit: 10
+  assignees:
+    - mpg-kosuke-toyama
+    - mpg-tetsuto-aizawa
+    - mpg-teruo-kakikubo
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
+  labels:
+    - "dependencies"
