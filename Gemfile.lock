@@ -169,7 +169,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.3)
-    playwright-ruby-client (1.35.0)
+    playwright-ruby-client (1.36.0)
       concurrent-ruby (>= 1.1.6)
       mime-types (>= 3.0)
     pry (0.14.2)
