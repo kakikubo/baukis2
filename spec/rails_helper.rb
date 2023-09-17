@@ -83,7 +83,7 @@ RSpec.configure do |config|
     driven_by :rack_test
   end
 
-  config.before(:each, js: :true, type: :system) do
+  config.before(:each, :js, :system) do
     driven_by :playwright
   end
 end
