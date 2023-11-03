@@ -12,11 +12,11 @@ concurrency:
 jobs:
   rspec_job:
     #ubuntu環境で動かします
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     services:
       postgres:
-        image: postgres:11.2-alpine
+        image: postgres:16.0-alpine
         ports:
           - 5432:5432
         env:
