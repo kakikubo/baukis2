@@ -187,7 +187,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
-    pg (1.5.3)
+    pg (1.5.4)
     playwright-ruby-client (1.39.0)
       concurrent-ruby (>= 1.1.6)
       mime-types (>= 3.0)
