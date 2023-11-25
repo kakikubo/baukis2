@@ -39,3 +39,5 @@ vendor/bundle/*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+.envrc
+.config/
