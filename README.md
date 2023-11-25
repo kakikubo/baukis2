@@ -10,18 +10,18 @@ Baukis2 は企業向けの顧客管理システム(Ruby on Rails 学習用サン
 
 * Ubuntu 20.04
 * Ruby 3.2.2
-* PostgreSQL 14
+* PostgreSQL 16
 
 # 必要なシステム
 
-- dip
-  - https://github.com/bibendi/dip/tree/v5.0.0#installation
+* dip
+  * <https://github.com/bibendi/dip/tree/v5.0.0#installation>
 
 # セットアップ
 
 書籍とちがってdip使うことにしてます。
 
-```
+```bash
 dip provision
 dip rails db:migrate
 dip rails db:seed
@@ -31,27 +31,30 @@ dip rails s
 などとして起動します
 最初からデータを入れ直すときは
 
-```
+```bash
 dip rails db:reset
 ```
+
 ## URLアクセス
 
-* http://baukis2.lvh.me:23000/ (staffです)
-* http://baukis2.lvh.me:23000/admin
-* http://baukis2.lvh.me:23000/customers
+* <http://baukis2.lvh.me:23000/> (staffです)
+* <http://baukis2.lvh.me:23000/admin>
+* <http://baukis2.lvh.me:23000/customers>
 
 ## テスト
 
-```
+```bash
 dip rspec
 ```
 
 ## テーブルがどのようなカラムをもっているか調べる
-```
+
+```ruby
 dip rails r StaffMember.columns.each { |c| p [c.name, c.type ] }
 ```
 
 ## アカウントをサスペンドするとか
-```
+
+```ruby
 dip rails r StaffMember.first.update_columns(suspended: true)
 ```
