@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      docker: 18
+  pre_build:
+    commands:
+    - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin 837072988256.dkr.ecr.ap-northeast-1.amazonaws.com 
+    - REPO=$(aws ecr describe-repositories --repository-names example --query 'repositories[0].repositoryUri' --output text)
+    - IMAGE=$REPO:latest
+  build:
+    commands:
+    - docker build -t $IMAGE .
+    - docker push $IMAGE
+  post_build:
+    commands:
+    - printf '[{"name":"example","imageUri":"%s"}]' $IMAGE > imagedefinitions.json
+
+artifacts:
+  files: imagedefinitions.json
