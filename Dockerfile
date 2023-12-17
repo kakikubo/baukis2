@@ -4,7 +4,7 @@ ARG UID=1000
 ARG GID=1000
 
 # RUN mkdir -p /var/mail
-RUN getenv group $GID || groupadd -g $GID devel
+RUN getent group $GID || groupadd -g $GID devel
 RUN id -u $UID || useradd -u $UID -g devel -m devel
 RUN echo "devel ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
