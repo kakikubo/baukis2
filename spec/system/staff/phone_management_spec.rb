@@ -13,12 +13,12 @@ describe '職員による顧客電話番号管理' do
   end
 
   it '職員が顧客の電話番号を追加する' do
-    click_link '顧客管理'
-    first('table.listing').click_link '編集'
+    click_on '顧客管理'
+    first('table.listing').click_on '編集'
 
     fill_in 'form_customer_phones_0_number', with: '090-0000-0000'
     check 'form_customer_phones_0_primary'
-    click_button '登録'
+    click_on '登録'
 
     customer.reload
     expect(customer.personal_phones.size).to eq(1)
@@ -26,12 +26,12 @@ describe '職員による顧客電話番号管理' do
   end
 
   it '職員が顧客の自宅番号を追加する' do
-    click_link '顧客管理'
-    first('table.listing').click_link '編集'
+    click_on '顧客管理'
+    first('table.listing').click_on '編集'
 
     fill_in 'form_home_address_phones_0_number', with: '03-9999-9999'
     check 'form_home_address_phones_0_primary'
-    click_button '登録'
+    click_on '登録'
 
     customer.reload
     expect(customer.home_address.phones.size).to eq(1)
@@ -39,12 +39,12 @@ describe '職員による顧客電話番号管理' do
   end
 
   it '職員が顧客の勤務先電話番号を追加する' do
-    click_link '顧客管理'
-    first('table.listing').click_link '編集'
+    click_on '顧客管理'
+    first('table.listing').click_on '編集'
 
     fill_in 'form_work_address_phones_0_number', with: '03-9999-8888'
     check 'form_work_address_phones_0_primary'
-    click_button '登録'
+    click_on '登録'
 
     customer.reload
     expect(customer.work_address.phones.size).to eq(1)
