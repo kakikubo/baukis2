@@ -11,7 +11,7 @@ module FeaturesSpecHelper
     within('#login-form') do
       fill_in 'メールアドレス', with: staff_member.email
       fill_in 'パスワード', with: password
-      click_button 'ログイン'
+      click_on 'ログイン'
     end
   end
 end
