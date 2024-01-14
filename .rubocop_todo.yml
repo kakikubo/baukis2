@@ -54,17 +54,6 @@ Rails/CreateTableWithTimestamps:
   Exclude:
     - 'db/migrate/20230312090660_create_active_storage_variant_records.active_storage.rb'
 
-# Offense count: 8
-# Configuration parameters: EnforcedStyle, AllowToTime.
-# SupportedStyles: strict, flexible
-Rails/Date:
-  Exclude:
-    - 'app/models/customer.rb'
-    - 'app/models/staff_member.rb'
-    - 'app/services/staff/authenticator.rb'
-    - 'db/seeds/development/staff_members.rb'
-    - 'spec/services/staff/authenticator_spec.rb'
-
 # Offense count: 2
 # Configuration parameters: Include.
 # Include: app/helpers/**/*.rb

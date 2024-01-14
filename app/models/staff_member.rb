@@ -19,6 +19,6 @@ class StaffMember < ApplicationRecord
   }
 
   def active?
-    !suspended? && start_date <= Date.today && (end_date.nil? || end_date > Date.today)
+    !suspended? && start_date <= Time.zone.today && (end_date.nil? || end_date > Time.zone.today)
   end
 end
