@@ -47,13 +47,6 @@ RSpec/MultipleDescribes:
 RSpec/MultipleExpectations:
   Max: 5
 
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: db/migrate/*.rb
-Rails/CreateTableWithTimestamps:
-  Exclude:
-    - 'db/migrate/20230312090660_create_active_storage_variant_records.active_storage.rb'
-
 # Offense count: 2
 # Configuration parameters: Include.
 # Include: app/helpers/**/*.rb
