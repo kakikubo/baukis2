@@ -76,7 +76,9 @@ module Staff
       end
     end
 
-    private def customer_params
+    private
+
+    def customer_params
       @params.require(:customer).except(:phones).permit(
         :email, :password,
         :family_name, :given_name, :family_name_kana, :given_name_kana,
@@ -84,20 +86,20 @@ module Staff
       )
     end
 
-    private def home_address_params
+    def home_address_params
       @params.require(:home_address).except(:phones).permit(
         :postal_code, :prefecture, :city, :address1, :address2
       )
     end
 
-    private def work_address_params
+    def work_address_params
       @params.require(:work_address).except(:phones).permit(
         :postal_code, :prefecture, :city, :address1, :address2,
         :company_name, :division_name
       )
     end
 
-    private def phone_params(record_name)
+    def phone_params(record_name)
       @params.require(record_name)
              .slice(:phones).permit(phones: %i[number primary])
     end

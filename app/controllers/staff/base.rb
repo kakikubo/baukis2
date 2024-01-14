@@ -4,20 +4,24 @@ module Staff
   class Base < ApplicationController
     before_action :authorize, :check_account, :check_timeout
 
-    private def current_staff_member
+    helper_method :current_staff_member
+
+    TIMEOUT = 60.minutes
+
+    private
+
+    def current_staff_member
       @current_staff_member ||= StaffMember.find_by(id: session[:staff_member_id]) if session[:staff_member_id]
     end
 
-    helper_method :current_staff_member
-
-    private def authorize
+    def authorize
       return if current_staff_member
 
       flash.alert = '職員としてログインしてください'
       redirect_to :staff_login
     end
 
-    private def check_account
+    def check_account
       return unless current_staff_member && !current_staff_member.active?
 
       session.delete(:staff_member_id)
@@ -25,9 +29,7 @@ module Staff
       redirect_to :staff_root
     end
 
-    TIMEOUT = 60.minutes
-
-    private def check_timeout
+    def check_timeout
       return unless current_staff_member
 
       if session[:last_access_time].nil? || session[:last_access_time] >= TIMEOUT.ago

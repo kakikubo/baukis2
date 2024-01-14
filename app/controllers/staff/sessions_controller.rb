@@ -34,15 +34,17 @@ module Staff
       end
     end
 
-    private def staff_login_form
-      params.require(:staff_login_form).permit(:email, :password)
-    end
-
     def destroy
       current_staff_member&.events&.create!(type: 'logged_out')
       session.delete(:staff_member_id)
       flash.notice = 'ログアウトしました'
       redirect_to :staff_root
+    end
+
+    private
+
+    def staff_login_form
+      params.require(:staff_login_form).permit(:email, :password)
     end
   end
 end
