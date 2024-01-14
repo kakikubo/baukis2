@@ -68,7 +68,7 @@ describe '管理者による職員管理' do
       expect do
         patch admin_staff_member_url(staff_member),
               params: { staff_member: params_hash }
-      end.not_to change { staff_member.hashed_password.to_s }
+      end.not_to(change { staff_member.hashed_password.to_s })
     end
   end
 end
