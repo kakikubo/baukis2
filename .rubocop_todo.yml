@@ -6,46 +6,17 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 5
-# Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
-Metrics/AbcSize:
-  Max: 86
-
-# Offense count: 1
-# Configuration parameters: AllowedMethods, AllowedPatterns.
-Metrics/CyclomaticComplexity:
-  Max: 9
-
-# Offense count: 10
-# Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
-Metrics/MethodLength:
-  Max: 41
-
-# Offense count: 1
-# Configuration parameters: AllowedMethods, AllowedPatterns.
-Metrics/PerceivedComplexity:
-  Max: 14
-
 # Offense count: 2
 RSpec/DescribeMethod:
   Exclude:
     - 'spec/requests/admin/staff_members_management_spec.rb'
     - 'spec/requests/staff/my_accounts_management_spec.rb'
 
-# Offense count: 12
-# Configuration parameters: CountAsOne.
-RSpec/ExampleLength:
-  Max: 35
-
 # Offense count: 2
 RSpec/MultipleDescribes:
   Exclude:
     - 'spec/requests/admin/staff_members_management_spec.rb'
     - 'spec/requests/staff/my_accounts_management_spec.rb'
-
-# Offense count: 9
-RSpec/MultipleExpectations:
-  Max: 5
 
 # Offense count: 2
 # Configuration parameters: Include.
