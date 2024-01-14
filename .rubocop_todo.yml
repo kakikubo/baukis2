@@ -8,14 +8,6 @@
 
 # Offense count: 7
 # This cop supports safe autocorrection (--autocorrect).
-Layout/EmptyLineAfterGuardClause:
-  Exclude:
-    - 'app/controllers/admin/base.rb'
-    - 'app/controllers/staff/base.rb'
-    - 'app/forms/staff/change_password_form.rb'
-
-# Offense count: 7
-# This cop supports safe autocorrection (--autocorrect).
 Layout/EmptyLinesAroundMethodBody:
   Exclude:
     - 'app/controllers/admin/base.rb'
