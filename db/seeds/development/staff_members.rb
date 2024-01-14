@@ -7,7 +7,7 @@ StaffMember.create!(
   family_name_kana: 'ヤマダ',
   given_name_kana: 'タロウ',
   password: 'password',
-  start_date: Date.today
+  start_date: Time.zone.today
 )
 
 family_names = %w[
@@ -37,7 +37,7 @@ given_names = %w[
     given_name_kana: gn[1],
     password: 'password',
     start_date: (100 - n).days.ago.to_date,
-    end_date: n.zero? ? Date.today : nil,
+    end_date: n.zero? ? Time.zone.today : nil,
     suspended: n == 1
   )
 end

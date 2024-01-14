@@ -6,79 +6,17 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 5
-# Configuration parameters: AllowedMethods, AllowedPatterns, CountRepeatedAttributes.
-Metrics/AbcSize:
-  Max: 86
-
-# Offense count: 1
-# Configuration parameters: AllowedMethods, AllowedPatterns.
-Metrics/CyclomaticComplexity:
-  Max: 9
-
-# Offense count: 10
-# Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
-Metrics/MethodLength:
-  Max: 41
-
-# Offense count: 1
-# Configuration parameters: AllowedMethods, AllowedPatterns.
-Metrics/PerceivedComplexity:
-  Max: 14
-
 # Offense count: 2
 RSpec/DescribeMethod:
   Exclude:
     - 'spec/requests/admin/staff_members_management_spec.rb'
     - 'spec/requests/staff/my_accounts_management_spec.rb'
 
-# Offense count: 12
-# Configuration parameters: CountAsOne.
-RSpec/ExampleLength:
-  Max: 35
-
 # Offense count: 2
 RSpec/MultipleDescribes:
   Exclude:
     - 'spec/requests/admin/staff_members_management_spec.rb'
     - 'spec/requests/staff/my_accounts_management_spec.rb'
-
-# Offense count: 9
-RSpec/MultipleExpectations:
-  Max: 5
-
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: db/migrate/*.rb
-Rails/CreateTableWithTimestamps:
-  Exclude:
-    - 'db/migrate/20230312090660_create_active_storage_variant_records.active_storage.rb'
-
-# Offense count: 8
-# Configuration parameters: EnforcedStyle, AllowToTime.
-# SupportedStyles: strict, flexible
-Rails/Date:
-  Exclude:
-    - 'app/models/customer.rb'
-    - 'app/models/staff_member.rb'
-    - 'app/services/staff/authenticator.rb'
-    - 'db/seeds/development/staff_members.rb'
-    - 'spec/services/staff/authenticator_spec.rb'
-
-# Offense count: 3
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: slashes, arguments
-Rails/FilePath:
-  Exclude:
-    - 'config/environments/development.rb'
-    - 'spec/rails_helper.rb'
-
-# Offense count: 1
-# Configuration parameters: Include.
-# Include: app/models/**/*.rb
-Rails/HasManyOrHasOneDependent:
-  Exclude:
-    - 'app/models/customer.rb'
 
 # Offense count: 2
 # Configuration parameters: Include.

@@ -30,7 +30,7 @@ describe Staff::Authenticator do
     end
 
     example '終了後ならfalseを返す' do
-      m = build(:staff_member, end_date: Date.today)
+      m = build(:staff_member, end_date: Time.zone.today)
       expect(described_class.new(m).authenticate('pw')).to be_falsey
     end
   end
