@@ -11,20 +11,22 @@ module ErrorHandlers
     rescue_from ActionController::ParameterMissing, with: :rescue400
   end
 
-  private def rescue400(_e)
+  private
+
+  def rescue400(_err)
     render 'errors/bad_request', status: :bad_request
   end
 
-  private def rescue403(e)
-    @exception = e
+  def rescue403(err)
+    @exception = err
     render 'errors/forbidden', status: :forbidden
   end
 
-  private def rescue404(_e)
+  def rescue404(_err)
     render 'errors/not_found', status: :not_found
   end
 
-  private def rescue500(_e)
+  def rescue500(_err)
     render 'errors/internal_server_error', status: :internal_server_error
   end
 end

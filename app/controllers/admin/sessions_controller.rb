@@ -32,14 +32,16 @@ module Admin
       end
     end
 
-    private def login_form_params
-      params.require(:admin_login_form).permit(:email, :password)
-    end
-
     def destroy
       session.delete(:administrator_id)
       flash.notice = 'ログアウトしました'
       redirect_to :admin_root
+    end
+
+    private
+
+    def login_form_params
+      params.require(:admin_login_form).permit(:email, :password)
     end
   end
 end
