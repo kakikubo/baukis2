@@ -12,13 +12,6 @@ RSpec/MultipleDescribes:
     - 'spec/requests/admin/staff_members_management_spec.rb'
     - 'spec/requests/staff/my_accounts_management_spec.rb'
 
-# Offense count: 2
-# Configuration parameters: Include.
-# Include: app/helpers/**/*.rb
-Rails/HelperInstanceVariable:
-  Exclude:
-    - 'app/helpers/application_helper.rb'
-
 # Offense count: 3
 # Configuration parameters: IgnoreScopes, Include.
 # Include: app/models/**/*.rb
