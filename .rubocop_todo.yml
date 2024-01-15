@@ -49,14 +49,6 @@ Rails/SkipsModelValidations:
     - 'spec/requests/admin/staff_members_management_spec.rb'
     - 'spec/requests/staff/my_accounts_management_spec.rb'
 
-# Offense count: 1
-# This cop supports unsafe autocorrection (--autocorrect-all).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/customer/top_controller.rb'
-
 # Offense count: 53
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
