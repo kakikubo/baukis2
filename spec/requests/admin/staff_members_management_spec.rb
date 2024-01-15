@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe '管理者による職員管理', 'ログイン前' do
+describe '管理者による職員管理(ログイン前)' do
   include_examples 'a protected admin controller', 'admin/staff_members'
 end
 
