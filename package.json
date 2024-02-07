@@ -2,7 +2,7 @@
   "name": "baukis2",
   "private": true,
   "dependencies": {
-    "@hotwired/turbo-rails": "^7.3.0",
+    "@hotwired/turbo-rails": "^8.0.0",
     "@rails/actioncable": "^7.0.0",
     "@rails/activestorage": "^7.0.0",
     "jquery": "^3.5.1",
