@@ -14,15 +14,6 @@ Rails/HelperInstanceVariable:
     - 'app/helpers/application_helper.rb'
 
 # Offense count: 3
-# Configuration parameters: IgnoreScopes, Include.
-# Include: app/models/**/*.rb
-Rails/InverseOf:
-  Exclude:
-    - 'app/models/address.rb'
-    - 'app/models/customer.rb'
-    - 'app/models/staff_event.rb'
-
-# Offense count: 3
 Rails/OutputSafety:
   Exclude:
     - 'app/lib/html_builder.rb'
