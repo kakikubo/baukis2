@@ -32,9 +32,9 @@ Rails/SkipsModelValidations:
 # This cop supports unsafe autocorrection (--autocorrect-all).
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: nested, compact
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/customer/top_controller.rb'
+#Style/ClassAndModuleChildren:
+#  Exclude:
+#    - 'app/packages/customer/controllers/top_controller.rb'
 
 # Offense count: 53
 # Configuration parameters: AllowedConstants.
