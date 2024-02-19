@@ -3,6 +3,7 @@
 class ApplicationController < ActionController::Base
   layout :set_layout
 
+  append_view_path(Dir.glob(Rails.root.join('app/packages/*/views'))) # 追記
   class Forbidden < ActionController::ActionControllerError; end
 
   class IpAddressRejected < ActionController::ActionControllerError; end
