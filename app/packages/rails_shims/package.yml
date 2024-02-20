@@ -1,3 +1,2 @@
 # package.yml
-dependencies:
-  - app/packages/customer
+enforce_dependencies: true

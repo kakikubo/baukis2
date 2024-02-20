@@ -25,10 +25,10 @@ describe 'ルーティング' do
 
   example '顧客トップページ' do
     config = Rails.application.config.baukis2
-    url = "http://#{config[:client][:host]}/#{config[:client][:path]}"
+    url = "http://#{config[:customer][:host]}/#{config[:customer][:path]}"
     expect(get: url).to route_to(
-      host: config[:client][:host],
-      controller: 'client/top',
+      host: config[:customer][:host],
+      controller: 'customer/top',
       action: 'index'
     )
   end
