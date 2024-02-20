@@ -39,7 +39,7 @@ dip rails db:reset
 
 * <http://baukis2.lvh.me:23000/> (staffです)
 * <http://baukis2.lvh.me:23000/admin>
-* <http://baukis2.lvh.me:23000/customers>
+* <http://lvh.me:23000/mypage>
 
 ## テスト
 

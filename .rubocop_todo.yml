@@ -34,7 +34,7 @@ Rails/SkipsModelValidations:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/controllers/customer/top_controller.rb'
+    - 'app/packages/rails_shims/controllers/customer/top_controller.rb'
 
 # Offense count: 53
 # Configuration parameters: AllowedConstants.
