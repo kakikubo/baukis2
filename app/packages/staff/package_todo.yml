@@ -6,13 +6,6 @@
 #
 # bin/packwerk update-todo
 ---
-app/packages/customer:
-  "::Customer":
-    violations:
-    - dependency
-    files:
-    - app/packages/staff/controllers/staff/customers_controller.rb
-    - app/packages/staff/forms/staff/customer_form.rb
 app/packages/rails_shims:
   "::ApplicationController":
     violations:

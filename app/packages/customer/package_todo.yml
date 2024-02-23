@@ -11,7 +11,7 @@ app/packages/rails_shims:
     violations:
     - dependency
     files:
-    - app/packages/customer/controllers/top_controller.rb
+    - app/packages/customer/controllers/customer/top_controller.rb
   "::ApplicationRecord":
     violations:
     - dependency
