@@ -7,11 +7,6 @@
 # bin/packwerk update-todo
 ---
 ".":
-  "::HtmlBuilder":
-    violations:
-    - dependency
-    files:
-    - app/packages/rails_shims/helpers/application_helper.rb
   "::Staff::Authenticator":
     violations:
     - dependency
