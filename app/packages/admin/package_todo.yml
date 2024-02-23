@@ -32,10 +32,3 @@ app/packages/rails_shims:
     - dependency
     files:
     - app/packages/admin/controllers/admin/staff_events_controller.rb
-app/packages/staff:
-  "::StaffMember":
-    violations:
-    - dependency
-    files:
-    - app/packages/admin/controllers/admin/staff_events_controller.rb
-    - app/packages/admin/controllers/admin/staff_members_controller.rb
