@@ -6,12 +6,6 @@
 #
 # bin/packwerk update-todo
 ---
-".":
-  "::Admin::LoginForm":
-    violations:
-    - dependency
-    files:
-    - app/packages/admin/controllers/admin/sessions_controller.rb
 app/packages/rails_shims:
   "::ApplicationController":
     violations:
