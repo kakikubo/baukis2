@@ -6,6 +6,13 @@
 #
 # bin/packwerk update-todo
 ---
+app/packages/customer:
+  "::Customer":
+    violations:
+    - dependency
+    files:
+    - app/packages/rails_shims/models/address.rb
+    - app/packages/rails_shims/models/phone.rb
 app/packages/staff:
   "::StaffMember":
     violations:
