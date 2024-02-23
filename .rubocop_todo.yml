@@ -16,7 +16,7 @@ Rails/HelperInstanceVariable:
 # Offense count: 3
 Rails/OutputSafety:
   Exclude:
-    - 'app/lib/html_builder.rb'
+    - 'app/packages/rails_shims/lib/html_builder.rb'
     - 'app/presenters/staff_member_presenter.rb'
 
 # Offense count: 3
