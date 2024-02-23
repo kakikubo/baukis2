@@ -7,22 +7,17 @@
 # bin/packwerk update-todo
 ---
 ".":
-  "::Admin::Authenticator":
-    violations:
-    - dependency
-    files:
-    - app/packages/admin/controllers/sessions_controller.rb
   "::Admin::LoginForm":
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/sessions_controller.rb
+    - app/packages/admin/controllers/admin/sessions_controller.rb
 app/packages/rails_shims:
   "::ApplicationController":
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/base.rb
+    - app/packages/admin/controllers/admin/base.rb
   "::ApplicationRecord":
     violations:
     - dependency
@@ -42,10 +37,10 @@ app/packages/rails_shims:
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/staff_events_controller.rb
+    - app/packages/admin/controllers/admin/staff_events_controller.rb
   "::StaffMember":
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/staff_events_controller.rb
-    - app/packages/admin/controllers/staff_members_controller.rb
+    - app/packages/admin/controllers/admin/staff_events_controller.rb
+    - app/packages/admin/controllers/admin/staff_members_controller.rb
