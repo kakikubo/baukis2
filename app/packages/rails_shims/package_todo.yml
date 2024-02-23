@@ -6,24 +6,9 @@
 #
 # bin/packwerk update-todo
 ---
-".":
-  "::Staff::Authenticator":
+app/packages/staff:
+  "::StaffMember":
     violations:
     - dependency
     files:
-    - app/packages/rails_shims/controllers/staff/sessions_controller.rb
-  "::Staff::ChangePasswordForm":
-    violations:
-    - dependency
-    files:
-    - app/packages/rails_shims/controllers/staff/passwords_controller.rb
-  "::Staff::CustomerForm":
-    violations:
-    - dependency
-    files:
-    - app/packages/rails_shims/controllers/staff/customers_controller.rb
-  "::Staff::LoginForm":
-    violations:
-    - dependency
-    files:
-    - app/packages/rails_shims/controllers/staff/sessions_controller.rb
+    - app/packages/rails_shims/models/staff_event.rb

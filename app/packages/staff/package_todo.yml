@@ -1,5 +1,5 @@
 # This file contains a list of dependencies that are not part of the long term plan for the
-# 'app/packages/admin' package.
+# 'app/packages/staff' package.
 # We should generally work to reduce this list over time.
 #
 # You can regenerate this file using the following command:
@@ -11,31 +11,35 @@ app/packages/rails_shims:
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/admin/base.rb
+    - app/packages/staff/controllers/staff/base.rb
   "::ApplicationRecord":
     violations:
     - dependency
     files:
-    - app/packages/admin/models/administrator.rb
+    - app/packages/staff/models/staff_member.rb
+  "::Customer":
+    violations:
+    - dependency
+    files:
+    - app/packages/staff/controllers/staff/customers_controller.rb
+    - app/packages/staff/forms/staff/customer_form.rb
   "::EmailHolder":
     violations:
     - dependency
     files:
-    - app/packages/admin/models/administrator.rb
+    - app/packages/staff/models/staff_member.rb
   "::PasswordHolder":
     violations:
     - dependency
     files:
-    - app/packages/admin/models/administrator.rb
+    - app/packages/staff/models/staff_member.rb
+  "::PersonalNameHolder":
+    violations:
+    - dependency
+    files:
+    - app/packages/staff/models/staff_member.rb
   "::StaffEvent":
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/admin/staff_events_controller.rb
-app/packages/staff:
-  "::StaffMember":
-    violations:
-    - dependency
-    files:
-    - app/packages/admin/controllers/admin/staff_events_controller.rb
-    - app/packages/admin/controllers/admin/staff_members_controller.rb
+    - app/packages/staff/models/staff_member.rb
