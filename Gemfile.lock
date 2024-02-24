@@ -202,6 +202,11 @@ GEM
       prism (>= 0.24.0)
       sorbet-runtime (>= 0.5.9914)
       zeitwerk (>= 2.6.1)
+    packwerk-extensions (0.1.9)
+      packwerk (>= 2.2.1)
+      railties (>= 6.0.0)
+      sorbet-runtime
+      zeitwerk
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -387,6 +392,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.10)
   nokogiri
   packwerk
+  packwerk-extensions
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 6.4)

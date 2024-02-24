@@ -10,26 +10,31 @@ app/packages/rails_shims:
   "::ApplicationController":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/staff/controllers/staff/base.rb
   "::ApplicationRecord":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/staff/models/staff_event.rb
     - app/packages/staff/models/staff_member.rb
   "::EmailHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/staff/models/staff_member.rb
   "::PasswordHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/staff/models/staff_member.rb
   "::PersonalNameHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/staff/models/staff_member.rb

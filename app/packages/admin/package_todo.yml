@@ -10,20 +10,24 @@ app/packages/rails_shims:
   "::ApplicationController":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/admin/controllers/admin/base.rb
   "::ApplicationRecord":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/admin/models/administrator.rb
   "::EmailHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/admin/models/administrator.rb
   "::PasswordHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/admin/models/administrator.rb

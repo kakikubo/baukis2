@@ -10,11 +10,13 @@ app/packages/rails_shims:
   "::ApplicationController":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/customer/controllers/customer/top_controller.rb
   "::ApplicationRecord":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/customer/models/address.rb
     - app/packages/customer/models/customer.rb
@@ -22,21 +24,25 @@ app/packages/rails_shims:
   "::EmailHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/customer/models/customer.rb
   "::PasswordHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/customer/models/customer.rb
   "::PersonalNameHolder":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/customer/models/customer.rb
   "::StringNormalizer":
     violations:
     - dependency
+    - privacy
     files:
     - app/packages/customer/models/address.rb
     - app/packages/customer/models/phone.rb

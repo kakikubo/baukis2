@@ -1,0 +1,86 @@
+# This file contains a list of dependencies that are not part of the long term plan for the
+# '.' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+app/packages/admin:
+  "::Admin::Authenticator":
+    violations:
+    - privacy
+    files:
+    - spec/services/admin/authenticator_spec.rb
+  "::Admin::Base::TIMEOUT":
+    violations:
+    - privacy
+    files:
+    - spec/requests/admin/staff_members_management_spec.rb
+  "::AdminService":
+    violations:
+    - privacy
+    files:
+    - config/initializers/configure_staff.rb
+  "::Administrator":
+    violations:
+    - privacy
+    files:
+    - db/seeds/development/administrators.rb
+    - spec/models/administrator_spec.rb
+app/packages/customer:
+  "::Address::PREFECTURE_NAMES":
+    violations:
+    - privacy
+    files:
+    - app/views/staff/customers/_home_address_fields.html.erb
+    - app/views/staff/customers/_work_address_fields.html.erb
+    - db/seeds/development/customers.rb
+  "::Customer":
+    violations:
+    - privacy
+    files:
+    - config/initializers/configure_customer.rb
+    - db/seeds/development/customers.rb
+    - spec/system/staff/customer_management_spec.rb
+app/packages/rails_shims:
+  "::ApplicationController::IpAddressRejected":
+    violations:
+    - privacy
+    files:
+    - app/views/errors/forbidden.html.erb
+  "::HtmlBuilder":
+    violations:
+    - privacy
+    files:
+    - app/presenters/form_presenter.rb
+    - app/presenters/model_presenter.rb
+app/packages/staff:
+  "::Staff::Authenticator":
+    violations:
+    - privacy
+    files:
+    - spec/services/staff/authenticator_spec.rb
+  "::Staff::Base::TIMEOUT":
+    violations:
+    - privacy
+    files:
+    - spec/requests/staff/my_accounts_management_spec.rb
+  "::StaffEvent":
+    violations:
+    - privacy
+    files:
+    - config/initializers/configure_staff.rb
+  "::StaffMember":
+    violations:
+    - privacy
+    files:
+    - config/initializers/configure_staff.rb
+    - db/seeds/development/staff_events.rb
+    - db/seeds/development/staff_members.rb
+    - spec/models/staff_member_spec.rb
+  "::StaffService":
+    violations:
+    - privacy
+    files:
+    - config/initializers/configure_customer.rb
