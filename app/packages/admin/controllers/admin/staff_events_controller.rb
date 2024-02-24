@@ -3,13 +3,9 @@
 module Admin
   class StaffEventsController < Admin::Base
     def index
-      if params[:staff_member_id]
-        @staff_member = AdminService.staff_member.find(params[:staff_member_id])
-        @events = @staff_member.events
-      else
-        @events = StaffEvent
-      end
-      @events = @events.order(occurred_at: :desc).includes(:member).page(params[:page])
+      @events = AdminService
+                .events(staff_member_id: params[:staff_member_id])
+                .order(occurred_at: :desc).includes(:member).page(params[:page])
     end
   end
 end
