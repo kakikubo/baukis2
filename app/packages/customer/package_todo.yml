@@ -6,7 +6,7 @@
 #
 # bin/packwerk update-todo
 ---
-app/packages/rails_shims:
+".":
   "::ApplicationController":
     violations:
     - dependency
