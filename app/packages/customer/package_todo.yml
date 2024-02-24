@@ -16,13 +16,10 @@ app/packages/rails_shims:
     violations:
     - dependency
     files:
+    - app/packages/customer/models/address.rb
     - app/packages/customer/models/customer.rb
+    - app/packages/customer/models/phone.rb
   "::EmailHolder":
-    violations:
-    - dependency
-    files:
-    - app/packages/customer/models/customer.rb
-  "::HomeAddress":
     violations:
     - dependency
     files:
@@ -37,13 +34,9 @@ app/packages/rails_shims:
     - dependency
     files:
     - app/packages/customer/models/customer.rb
-  "::Phone":
+  "::StringNormalizer":
     violations:
     - dependency
     files:
-    - app/packages/customer/models/customer.rb
-  "::WorkAddress":
-    violations:
-    - dependency
-    files:
-    - app/packages/customer/models/customer.rb
+    - app/packages/customer/models/address.rb
+    - app/packages/customer/models/phone.rb

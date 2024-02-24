@@ -16,6 +16,7 @@ app/packages/rails_shims:
     violations:
     - dependency
     files:
+    - app/packages/staff/models/staff_event.rb
     - app/packages/staff/models/staff_member.rb
   "::EmailHolder":
     violations:
@@ -28,11 +29,6 @@ app/packages/rails_shims:
     files:
     - app/packages/staff/models/staff_member.rb
   "::PersonalNameHolder":
-    violations:
-    - dependency
-    files:
-    - app/packages/staff/models/staff_member.rb
-  "::StaffEvent":
     violations:
     - dependency
     files:
