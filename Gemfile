@@ -34,6 +34,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'graphwerk'
   gem 'listen', '>= 3.0.5', '< 3.9'
   gem 'pry-rails'
   gem 'rubocop', require: false

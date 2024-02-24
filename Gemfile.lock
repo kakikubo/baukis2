@@ -127,6 +127,11 @@ GEM
     ffi (1.16.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphwerk (1.2.1)
+      activesupport
+      packwerk
+      ruby-graphviz
+      sorbet-runtime
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -316,6 +321,8 @@ GEM
       rubocop (~> 1.40)
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
+    ruby-graphviz (1.2.5)
+      rexml
     ruby-progressbar (1.13.0)
     ruby2_keywords (0.0.5)
     sassc (2.4.0)
@@ -380,6 +387,7 @@ DEPENDENCIES
   capybara-playwright-driver
   date_validator
   factory_bot_rails
+  graphwerk
   importmap-rails
   jbuilder (~> 2.11)
   jsbundling-rails
