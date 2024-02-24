@@ -395,9 +395,6 @@ DEPENDENCIES
   jsbundling-rails
   kaminari
   listen (>= 3.0.5, < 3.9)
-  net-imap
-  net-pop
-  net-smtp
   nokogiri
   packwerk
   pg (>= 0.18, < 2.0)

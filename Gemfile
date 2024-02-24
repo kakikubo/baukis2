@@ -28,11 +28,6 @@ gem 'nokogiri'
 gem 'rails-i18n'
 gem 'valid_email2'
 
-# FIXME: https://stackoverflow.com/questions/70500220/rails-7-ruby-3-1-loaderror-cannot-load-such-file-net-smtp
-gem 'net-imap', require: false
-gem 'net-pop', require: false
-gem 'net-smtp', require: false
-
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
