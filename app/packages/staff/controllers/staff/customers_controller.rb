@@ -3,11 +3,11 @@
 module Staff
   class CustomersController < Staff::Base
     def index
-      @customers = Customer.order(:family_name_kana, :given_name_kana).page(params[:page])
+      @customers = StaffService.customer.order(:family_name_kana, :given_name_kana).page(params[:page])
     end
 
     def show
-      @customer = Customer.find(params[:id])
+      @customer = StaffService.customer.find(params[:id])
     end
 
     def new
@@ -15,7 +15,8 @@ module Staff
     end
 
     def edit
-      @customer_form = Staff::CustomerForm.new(Customer.find(params[:id]))
+      customer = StaffService.customer.find(params[:id])
+      @customer_form = Staff::CustomerForm.new(customer)
     end
 
     def create
@@ -31,7 +32,8 @@ module Staff
     end
 
     def update
-      @customer_form = Staff::CustomerForm.new(Customer.find(params[:id]))
+      customer = StaffService.customer.find(params[:id])
+      @customer_form = Staff::CustomerForm.new(customer)
       @customer_form.assign_attributes(params[:form])
       if @customer_form.save
         flash.notice = '顧客を更新しました。'
@@ -43,7 +45,7 @@ module Staff
     end
 
     def destroy
-      customer = Customer.find(params[:id])
+      customer = StaffService.customer.find(params[:id])
       customer.destroy!
       flash.notice = '顧客アカウントを削除しました。'
       redirect_to :staff_customers
