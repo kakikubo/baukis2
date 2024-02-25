@@ -1,29 +1,35 @@
 # This file contains a list of dependencies that are not part of the long term plan for the
-# 'app/packages/admin' package.
+# 'packs/staff' package.
 # We should generally work to reduce this list over time.
 #
 # You can regenerate this file using the following command:
 #
 # bin/packwerk update-todo
 ---
-app/packages/rails_shims:
+packs/rails_shims:
   "::ApplicationController":
     violations:
     - dependency
     files:
-    - app/packages/admin/controllers/admin/base.rb
+    - packs/staff/app/controllers/staff/base.rb
   "::ApplicationRecord":
     violations:
     - dependency
     files:
-    - app/packages/admin/models/administrator.rb
+    - packs/staff/app/models/staff_event.rb
+    - packs/staff/app/models/staff_member.rb
   "::EmailHolder":
     violations:
     - dependency
     files:
-    - app/packages/admin/models/administrator.rb
+    - packs/staff/app/models/staff_member.rb
   "::PasswordHolder":
     violations:
     - dependency
     files:
-    - app/packages/admin/models/administrator.rb
+    - packs/staff/app/models/staff_member.rb
+  "::PersonalNameHolder":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/models/staff_member.rb

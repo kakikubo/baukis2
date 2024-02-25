@@ -16,7 +16,7 @@ Rails/HelperInstanceVariable:
 # Offense count: 3
 Rails/OutputSafety:
   Exclude:
-    - 'app/packages/rails_shims/lib/html_builder.rb'
+    - 'packs/rails_shims/lib/html_builder.rb'
     - 'app/presenters/staff_member_presenter.rb'
 
 # Offense count: 3
@@ -34,7 +34,7 @@ Rails/SkipsModelValidations:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/packages/customer/controllers/customer/top_controller.rb'
+    - 'packs/customer/app/controllers/customer/top_controller.rb'
 
 # Offense count: 53
 # Configuration parameters: AllowedConstants.
