@@ -16,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbolinks', '~> 5'
 gem 'turbo-rails'
 
+gem 'packs-rails'
 gem 'packwerk'
 
 # Reduces boot times through caching; required in config/boot.rb

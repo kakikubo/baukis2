@@ -1,0 +1,57 @@
+# This file contains a list of dependencies that are not part of the long term plan for the
+# 'packs/customer' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+".":
+  "::ApplicationController":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/controllers/customer/top_controller.rb
+  "::ApplicationRecord":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/models/address.rb
+    - packs/customer/app/models/customer.rb
+    - packs/customer/app/models/phone.rb
+  "::EmailHolder":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/models/customer.rb
+  "::ModelPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/presenters/customer_presenter.rb
+  "::PasswordHolder":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/models/customer.rb
+  "::PersonalNameHolder":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/models/customer.rb
+  "::StaffService":
+    violations:
+    - dependency
+    files:
+    - packs/customer/config/initializers/configure_customer.rb
+  "::StringNormalizer":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/models/address.rb
+    - packs/customer/app/models/phone.rb
+  "::UserFormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/presenters/customer_form_presenter.rb
