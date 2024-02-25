@@ -66,9 +66,3 @@
     - dependency
     files:
     - packs/customer/app/presenters/customer_form_presenter.rb
-packs/staff:
-  "::StaffService":
-    violations:
-    - dependency
-    files:
-    - packs/customer/config/initializers/configure_customer.rb

@@ -23,6 +23,11 @@
     - dependency
     files:
     - packs/staff/app/models/staff_member.rb
+  "::FormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/views/staff/passwords/edit.html.erb
   "::ModelPresenter":
     violations:
     - dependency
@@ -39,8 +44,15 @@
     - dependency
     files:
     - packs/staff/app/models/staff_member.rb
+  "::StaffService":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/controllers/staff/customers_controller.rb
+    - packs/staff/app/forms/staff/customer_form.rb
   "::UserFormPresenter":
     violations:
     - dependency
     files:
     - packs/staff/app/presenters/staff_member_form_presenter.rb
+    - packs/staff/app/views/staff/accounts/_form.html.erb

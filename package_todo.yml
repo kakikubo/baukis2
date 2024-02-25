@@ -6,14 +6,20 @@
 #
 # bin/packwerk update-todo
 ---
+packs/customer:
+  "::Customer":
+    violations:
+    - dependency
+    files:
+    - config/initializers/configure_customer.rb
 packs/staff:
-  "::StaffEventPresenter":
+  "::StaffEvent":
     violations:
     - dependency
     files:
-    - app/views/admin/staff_events/index.html.erb
-  "::StaffMemberPresenter":
+    - config/initializers/configure_staff.rb
+  "::StaffMember":
     violations:
     - dependency
     files:
-    - app/views/admin/staff_members/index.html.erb
+    - config/initializers/configure_staff.rb
