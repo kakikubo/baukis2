@@ -46,5 +46,6 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'capybara-playwright-driver'
+  gem 'danger-packwerk'
   gem 'rspec-rails'
 end
