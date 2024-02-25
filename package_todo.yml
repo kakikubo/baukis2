@@ -1,0 +1,86 @@
+# This file contains a list of dependencies that are not part of the long term plan for the
+# '.' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+packs/admin:
+  "::Admin::Authenticator":
+    violations:
+    - dependency
+    files:
+    - spec/services/admin/authenticator_spec.rb
+  "::Admin::Base::TIMEOUT":
+    violations:
+    - dependency
+    files:
+    - spec/requests/admin/staff_members_management_spec.rb
+  "::AdminService":
+    violations:
+    - dependency
+    files:
+    - config/initializers/configure_staff.rb
+  "::Administrator":
+    violations:
+    - dependency
+    files:
+    - db/seeds/development/administrators.rb
+    - spec/models/administrator_spec.rb
+packs/customer:
+  "::Address::PREFECTURE_NAMES":
+    violations:
+    - dependency
+    files:
+    - app/views/staff/customers/_home_address_fields.html.erb
+    - app/views/staff/customers/_work_address_fields.html.erb
+    - db/seeds/development/customers.rb
+  "::Customer":
+    violations:
+    - dependency
+    files:
+    - config/initializers/configure_customer.rb
+    - db/seeds/development/customers.rb
+    - spec/system/staff/customer_management_spec.rb
+packs/rails_shims:
+  "::ApplicationController::IpAddressRejected":
+    violations:
+    - dependency
+    files:
+    - app/views/errors/forbidden.html.erb
+  "::HtmlBuilder":
+    violations:
+    - dependency
+    files:
+    - app/presenters/form_presenter.rb
+    - app/presenters/model_presenter.rb
+packs/staff:
+  "::Staff::Authenticator":
+    violations:
+    - dependency
+    files:
+    - spec/services/staff/authenticator_spec.rb
+  "::Staff::Base::TIMEOUT":
+    violations:
+    - dependency
+    files:
+    - spec/requests/staff/my_accounts_management_spec.rb
+  "::StaffEvent":
+    violations:
+    - dependency
+    files:
+    - config/initializers/configure_staff.rb
+  "::StaffMember":
+    violations:
+    - dependency
+    files:
+    - config/initializers/configure_staff.rb
+    - db/seeds/development/staff_events.rb
+    - db/seeds/development/staff_members.rb
+    - spec/models/staff_member_spec.rb
+  "::StaffService":
+    violations:
+    - dependency
+    files:
+    - config/initializers/configure_customer.rb
