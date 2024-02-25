@@ -1,0 +1,33 @@
+name: danger
+
+on:
+  pull_request:
+    types: [ opened, reopened, synchronize ]
+    branches-ignore: [ master ]
+
+concurrency:
+  group: baukis2-danger-${{ github.event.pull_request.head.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  statuses: write
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec danger

@@ -16,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbolinks', '~> 5'
 gem 'turbo-rails'
 
+gem 'packs-rails'
 gem 'packwerk'
 gem 'packwerk-extensions'
 
@@ -46,5 +47,6 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'capybara-playwright-driver'
+  gem 'danger-packwerk'
   gem 'rspec-rails'
 end
