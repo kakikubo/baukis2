@@ -26,7 +26,7 @@ Rails/SkipsModelValidations:
   Exclude:
     - 'db/migrate/20230312090659_add_service_name_to_active_storage_blobs.active_storage.rb'
     - 'packs/admin/spec/requests/admin/staff_members_management_spec.rb'
-    - 'spec/requests/staff/my_accounts_management_spec.rb'
+    - 'packs/staff/spec/requests/staff/my_accounts_management_spec.rb'
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
