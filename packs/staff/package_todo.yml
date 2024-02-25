@@ -18,6 +18,11 @@
     - dependency
     files:
     - packs/staff/app/views/staff/customers/show.html.erb
+  "::AdminService":
+    violations:
+    - dependency
+    files:
+    - packs/staff/config/initializers/configure_staff.rb
   "::ApplicationController":
     violations:
     - dependency
