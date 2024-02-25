@@ -28,6 +28,12 @@
     - dependency
     files:
     - packs/admin/app/models/administrator.rb
+  "::ModelPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/admin/app/presenters/staff_event_presenter.rb
+    - packs/admin/app/presenters/staff_member_presenter.rb
   "::PasswordHolder":
     violations:
     - dependency
@@ -37,15 +43,4 @@
     violations:
     - dependency
     files:
-    - packs/admin/app/views/staff_members/_form.html.erb
-packs/staff:
-  "::StaffEventPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/admin/app/views/staff_events/index.html.erb
-  "::StaffMemberPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/admin/app/views/staff_members/index.html.erb
+    - packs/admin/app/views/admin/staff_members/_form.html.erb

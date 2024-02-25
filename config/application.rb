@@ -23,7 +23,7 @@ module Baukis2
     config.i18n.default_locale = :ja
 
     # config.paths.add 'app/packages', glob: '*/{*,*/concerns}', eager_load: true # 追記
-    config.paths.add 'packs', glob: '*/{*,*/concerns}', eager_load: true # 追記
+    # config.paths.add 'packs', glob: '*/{*,*/concerns}', eager_load: true # 追記
 
     config.generators do |g|
       g.skip_routes true

@@ -6,12 +6,23 @@
 #
 # bin/packwerk update-todo
 ---
+packs/admin:
+  "::Administrator":
+    violations:
+    - dependency
+    files:
+    - db/seeds/development/administrators.rb
 packs/customer:
+  "::Address::PREFECTURE_NAMES":
+    violations:
+    - dependency
+    files:
+    - db/seeds/development/customers.rb
   "::Customer":
     violations:
     - dependency
     files:
-    - config/initializers/configure_customer.rb
+    - db/seeds/development/customers.rb
 packs/staff:
   "::StaffEvent":
     violations:
@@ -23,3 +34,5 @@ packs/staff:
     - dependency
     files:
     - config/initializers/configure_staff.rb
+    - db/seeds/development/staff_events.rb
+    - db/seeds/development/staff_members.rb

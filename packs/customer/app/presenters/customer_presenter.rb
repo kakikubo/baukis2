@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CustomerPresenter < ::ModelPresenter
+class CustomerPresenter < ModelPresenter
   delegate :email, to: :object
 
   def full_name

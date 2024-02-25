@@ -7,6 +7,17 @@
 # bin/packwerk update-todo
 ---
 ".":
+  "::AddressFormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
+    - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
+  "::AddressPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/views/staff/customers/show.html.erb
   "::ApplicationController":
     violations:
     - dependency
@@ -27,13 +38,8 @@
     violations:
     - dependency
     files:
+    - packs/staff/app/views/staff/customers/_form.html.erb
     - packs/staff/app/views/staff/passwords/edit.html.erb
-  "::ModelPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/staff/app/presenters/staff_event_presenter.rb
-    - packs/staff/app/presenters/staff_member_presenter.rb
   "::PasswordHolder":
     violations:
     - dependency
@@ -56,3 +62,21 @@
     files:
     - packs/staff/app/presenters/staff_member_form_presenter.rb
     - packs/staff/app/views/staff/accounts/_form.html.erb
+packs/customer:
+  "::Address::PREFECTURE_NAMES":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
+    - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
+  "::CustomerFormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/views/staff/customers/_customer_fields.html.erb
+  "::CustomerPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/views/staff/customers/index.html.erb
+    - packs/staff/app/views/staff/customers/show.html.erb

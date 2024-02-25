@@ -7,17 +7,6 @@
 # bin/packwerk update-todo
 ---
 ".":
-  "::AddressFormPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/_home_address_fields.html.erb
-    - packs/customer/app/views/staff/customers/_work_address_fields.html.erb
-  "::AddressPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/show.html.erb
   "::ApplicationController":
     violations:
     - dependency
@@ -35,11 +24,6 @@
     - dependency
     files:
     - packs/customer/app/models/customer.rb
-  "::FormPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/_form.html.erb
   "::ModelPresenter":
     violations:
     - dependency
@@ -55,6 +39,11 @@
     - dependency
     files:
     - packs/customer/app/models/customer.rb
+  "::StaffService":
+    violations:
+    - dependency
+    files:
+    - packs/customer/config/initializers/configure_customer.rb
   "::StringNormalizer":
     violations:
     - dependency

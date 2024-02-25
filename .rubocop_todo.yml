@@ -17,7 +17,7 @@ Rails/HelperInstanceVariable:
 Rails/OutputSafety:
   Exclude:
     - 'app/lib/html_builder.rb'
-    - 'app/presenters/staff_member_presenter.rb'
+    - 'packs/admin/app/presenters/staff_member_presenter.rb'
 
 # Offense count: 3
 # Configuration parameters: ForbiddenMethods, AllowedMethods.
