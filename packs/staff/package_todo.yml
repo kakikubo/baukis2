@@ -71,17 +71,20 @@ packs/customer:
   "::Address::PREFECTURE_NAMES":
     violations:
     - dependency
+    - privacy
     files:
     - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
     - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
   "::CustomerFormPresenter":
     violations:
     - dependency
+    - privacy
     files:
     - packs/staff/app/views/staff/customers/_customer_fields.html.erb
   "::CustomerPresenter":
     violations:
     - dependency
+    - privacy
     files:
     - packs/staff/app/views/staff/customers/index.html.erb
     - packs/staff/app/views/staff/customers/show.html.erb
