@@ -16,6 +16,7 @@ gem 'stimulus-rails'
 gem 'turbolinks', '~> 5'
 gem 'turbo-rails'
 
+gem 'packs-rails'
 gem 'packwerk'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -34,7 +35,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.9'
+  gem 'listen', '>= 3.0.5', '< 3.10'
   gem 'pry-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false

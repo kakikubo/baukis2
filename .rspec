@@ -1,1 +1,1 @@
---require spec_helper
+--require packs/rails/rspec --require rails_helper
