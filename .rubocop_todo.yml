@@ -17,7 +17,7 @@ Rails/HelperInstanceVariable:
 Rails/OutputSafety:
   Exclude:
     - 'app/lib/html_builder.rb'
-    - 'app/presenters/staff_member_presenter.rb'
+    - 'packs/admin/app/presenters/staff_member_presenter.rb'
 
 # Offense count: 3
 # Configuration parameters: ForbiddenMethods, AllowedMethods.
@@ -25,8 +25,8 @@ Rails/OutputSafety:
 Rails/SkipsModelValidations:
   Exclude:
     - 'db/migrate/20230312090659_add_service_name_to_active_storage_blobs.active_storage.rb'
-    - 'spec/requests/admin/staff_members_management_spec.rb'
-    - 'spec/requests/staff/my_accounts_management_spec.rb'
+    - 'packs/admin/spec/requests/admin/staff_members_management_spec.rb'
+    - 'packs/staff/spec/requests/staff/my_accounts_management_spec.rb'
 
 # Offense count: 1
 # This cop supports unsafe autocorrection (--autocorrect-all).
@@ -34,7 +34,7 @@ Rails/SkipsModelValidations:
 # SupportedStyles: nested, compact
 Style/ClassAndModuleChildren:
   Exclude:
-    - 'app/controllers/customer/top_controller.rb'
+    - 'packs/customer/app/controllers/customer/top_controller.rb'
 
 # Offense count: 53
 # Configuration parameters: AllowedConstants.
