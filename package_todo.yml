@@ -6,21 +6,6 @@
 #
 # bin/packwerk update-todo
 ---
-packs/customer:
-  "::Address::PREFECTURE_NAMES":
-    violations:
-    - dependency
-    files:
-    - app/views/staff/customers/_home_address_fields.html.erb
-    - app/views/staff/customers/_work_address_fields.html.erb
-    - db/seeds/development/customers.rb
-  "::Customer":
-    violations:
-    - dependency
-    files:
-    - config/initializers/configure_customer.rb
-    - db/seeds/development/customers.rb
-    - spec/system/staff/customer_management_spec.rb
 packs/rails_shims:
   "::ApplicationController::IpAddressRejected":
     violations:
@@ -51,8 +36,3 @@ packs/staff:
     - db/seeds/development/staff_events.rb
     - db/seeds/development/staff_members.rb
     - spec/models/staff_member_spec.rb
-  "::StaffService":
-    violations:
-    - dependency
-    files:
-    - config/initializers/configure_customer.rb
