@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # ref: https://danger.systems/reference.html
 
 # Danger gem動作確認用(意図的にコメントさせたい場合はコメントインする)
