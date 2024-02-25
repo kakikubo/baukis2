@@ -27,3 +27,14 @@ packs/rails_shims:
     - dependency
     files:
     - packs/admin/app/models/administrator.rb
+packs/staff:
+  "::StaffEvent":
+    violations:
+    - dependency
+    files:
+    - packs/admin/config/initializers/configure_staff.rb
+  "::StaffMember":
+    violations:
+    - dependency
+    files:
+    - packs/admin/config/initializers/configure_staff.rb

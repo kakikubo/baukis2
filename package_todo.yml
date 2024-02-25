@@ -6,28 +6,6 @@
 #
 # bin/packwerk update-todo
 ---
-packs/admin:
-  "::Admin::Authenticator":
-    violations:
-    - dependency
-    files:
-    - spec/services/admin/authenticator_spec.rb
-  "::Admin::Base::TIMEOUT":
-    violations:
-    - dependency
-    files:
-    - spec/requests/admin/staff_members_management_spec.rb
-  "::AdminService":
-    violations:
-    - dependency
-    files:
-    - config/initializers/configure_staff.rb
-  "::Administrator":
-    violations:
-    - dependency
-    files:
-    - db/seeds/development/administrators.rb
-    - spec/models/administrator_spec.rb
 packs/customer:
   "::Address::PREFECTURE_NAMES":
     violations:
@@ -66,16 +44,10 @@ packs/staff:
     - dependency
     files:
     - spec/requests/staff/my_accounts_management_spec.rb
-  "::StaffEvent":
-    violations:
-    - dependency
-    files:
-    - config/initializers/configure_staff.rb
   "::StaffMember":
     violations:
     - dependency
     files:
-    - config/initializers/configure_staff.rb
     - db/seeds/development/staff_events.rb
     - db/seeds/development/staff_members.rb
     - spec/models/staff_member_spec.rb
