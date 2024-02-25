@@ -18,23 +18,6 @@
     - dependency
     files:
     - packs/customer/app/views/staff/customers/show.html.erb
-  "::CustomerFormPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/_customer_fields.html.erb
-  "::CustomerPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/index.html.erb
-    - packs/customer/app/views/staff/customers/show.html.erb
-  "::FormPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/_form.html.erb
-packs/rails_shims:
   "::ApplicationController":
     violations:
     - dependency
@@ -47,11 +30,27 @@ packs/rails_shims:
     - packs/customer/app/models/address.rb
     - packs/customer/app/models/customer.rb
     - packs/customer/app/models/phone.rb
+  "::CustomerFormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/views/staff/customers/_customer_fields.html.erb
+  "::CustomerPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/views/staff/customers/index.html.erb
+    - packs/customer/app/views/staff/customers/show.html.erb
   "::EmailHolder":
     violations:
     - dependency
     files:
     - packs/customer/app/models/customer.rb
+  "::FormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/views/staff/customers/_form.html.erb
   "::PasswordHolder":
     violations:
     - dependency
