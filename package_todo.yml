@@ -1,0 +1,19 @@
+# This file contains a list of dependencies that are not part of the long term plan for the
+# '.' package.
+# We should generally work to reduce this list over time.
+#
+# You can regenerate this file using the following command:
+#
+# bin/packwerk update-todo
+---
+packs/staff:
+  "::StaffEventPresenter":
+    violations:
+    - dependency
+    files:
+    - app/views/admin/staff_events/index.html.erb
+  "::StaffMemberPresenter":
+    violations:
+    - dependency
+    files:
+    - app/views/admin/staff_members/index.html.erb

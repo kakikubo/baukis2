@@ -30,17 +30,6 @@
     - packs/customer/app/models/address.rb
     - packs/customer/app/models/customer.rb
     - packs/customer/app/models/phone.rb
-  "::CustomerFormPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/_customer_fields.html.erb
-  "::CustomerPresenter":
-    violations:
-    - dependency
-    files:
-    - packs/customer/app/views/staff/customers/index.html.erb
-    - packs/customer/app/views/staff/customers/show.html.erb
   "::EmailHolder":
     violations:
     - dependency
@@ -51,6 +40,11 @@
     - dependency
     files:
     - packs/customer/app/views/staff/customers/_form.html.erb
+  "::ModelPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/presenters/customer_presenter.rb
   "::PasswordHolder":
     violations:
     - dependency
@@ -67,6 +61,11 @@
     files:
     - packs/customer/app/models/address.rb
     - packs/customer/app/models/phone.rb
+  "::UserFormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/customer/app/presenters/customer_form_presenter.rb
 packs/staff:
   "::StaffService":
     violations:

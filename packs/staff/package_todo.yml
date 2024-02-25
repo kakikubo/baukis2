@@ -23,6 +23,12 @@
     - dependency
     files:
     - packs/staff/app/models/staff_member.rb
+  "::ModelPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/presenters/staff_event_presenter.rb
+    - packs/staff/app/presenters/staff_member_presenter.rb
   "::PasswordHolder":
     violations:
     - dependency
@@ -33,3 +39,8 @@
     - dependency
     files:
     - packs/staff/app/models/staff_member.rb
+  "::UserFormPresenter":
+    violations:
+    - dependency
+    files:
+    - packs/staff/app/presenters/staff_member_form_presenter.rb
