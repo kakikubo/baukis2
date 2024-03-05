@@ -4,14 +4,7 @@ Rails.application.routes.draw do
   config = Rails.application.config.baukis2
 
   constraints host: config[:staff][:host] do
-    namespace :staff, path: config[:staff][:path] do
-      root 'top#index'
-      get 'login' => 'sessions#new', as: :login
-      resource :session, only: %i[create destroy]
-      resource :account, except: %i[new create destroy]
-      resource :password, only: %i[show edit update]
-      resources :customers
-    end
+    draw(:staff)
   end
 
   constraints host: config[:admin][:host] do
