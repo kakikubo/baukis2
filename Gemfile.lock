@@ -165,6 +165,8 @@ GEM
       faraday (>= 0.8)
     faraday-net_http (3.1.0)
       net-http
+    faraday-retry (2.2.0)
+      faraday (~> 2.0)
     ffi (1.16.3)
     git (1.19.1)
       addressable (~> 2.8)
@@ -480,6 +482,7 @@ DEPENDENCIES
   danger-packwerk
   date_validator
   factory_bot_rails
+  faraday-retry
   importmap-rails
   jbuilder (~> 2.11)
   jsbundling-rails
