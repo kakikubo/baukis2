@@ -25,6 +25,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bcrypt'
 gem 'date_validator'
+gem 'faraday-retry'
 gem 'kaminari'
 gem 'nokogiri'
 gem 'rails-i18n'
