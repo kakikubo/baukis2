@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BUNDLE_ONLY: test
+      RAILS_ENV: test
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
