@@ -6,7 +6,7 @@
     per_page:      number of items to fetch per page
     remote:        data-remote -%>
 <span class="prev">
-  <%= link_to_unless(current_page.first?, t('views.pagination.previous').html_safe, url) do |name|
+  <%= link_to_unless(current_page.first?, sanitize t('views.pagination.previous'), url) do |name|
         content_tag(:span, name, class: 'disabled')
       end %>
 </span>
