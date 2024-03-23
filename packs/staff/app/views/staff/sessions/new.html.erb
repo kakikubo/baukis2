@@ -5,15 +5,15 @@
 
   <%= form_with model: @form, url: :staff_session do |f| %>
     <div>
-      <%= f.label :email, "メールアドレス" %>
+      <%= f.label :email, 'メールアドレス' %>
       <%= f.text_field :email %>
     </div>
     <div>
-      <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password%>
+      <%= f.label :password, 'パスワード' %>
+      <%= f.password_field :password %>
     </div>
     <div>
-      <%= f.submit "ログイン" %>
+      <%= f.submit 'ログイン' %>
     </div>
   <% end %>
 </div>
