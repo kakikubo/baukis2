@@ -3,14 +3,14 @@
     full_name = @staff_member.family_name + @staff_member.given_name
     @title = "#{full_name}さんのログイン・ログアウト記録"
   else
-    @title = "職員のログイン・ログアウト記録"
+    @title = '職員のログイン・ログアウト記録'
   end
 %>
 <h1><%= @title %></h1>
 
 <div class="table-wrapper">
   <div class="links">
-    <%= link_to "職員一覧", :admin_staff_members %>
+    <%= link_to '職員一覧', :admin_staff_members %>
   </div>
 
   <%= paginate @events %>
@@ -28,8 +28,8 @@
     <% end %>
     <% if @events.empty? %>
       <tr>
-        <%= content_tag(:td, "記録がありません",
-                        colspan: @staff_member ? 2 : 3, style: "text-align: center") %>
+        <%= content_tag(:td, '記録がありません',
+                        colspan: @staff_member ? 2 : 3, style: 'text-align: center') %>
       </tr>
     <% end %>
   </table>
@@ -37,6 +37,6 @@
   <%= paginate @events %>
 
   <div class="links">
-    <%= link_to "職員一覧", :admin_staff_members %>
+    <%= link_to '職員一覧', :admin_staff_members %>
   </div>
 </div>

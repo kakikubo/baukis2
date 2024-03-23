@@ -3,7 +3,7 @@
 
 <div id="generic-form">
   <%= form_with model: @customer_form, scope: 'form', url: :staff_customers do |f| %>
-    <%= render "form", f: f %>
+    <%= render 'form', f: %>
     <div class="buttons">
       <%= f.submit '登録' %>
       <%= link_to 'キャンセル', :staff_customers %>
