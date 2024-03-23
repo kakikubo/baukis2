@@ -33,11 +33,11 @@ gem 'valid_email2'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'erb_lint', require: false
   gem 'factory_bot_rails'
 end
 
 group :development do
-  gem 'erb_lint', require: false
   gem 'listen', '>= 3.0.5', '< 3.10'
   gem 'pry-rails'
   gem 'rubocop', require: false
