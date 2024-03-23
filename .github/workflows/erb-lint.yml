@@ -1,0 +1,21 @@
+name: erb-lint
+
+on: pull_request
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  erb-lint:
+    runs-on: ubuntu-latest
+    env:
+      BUNDLE_ONLY: lint
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+          bundler-cache: true
+      - name: Run erblint
+        run: bundle exec erblint --lint-all
