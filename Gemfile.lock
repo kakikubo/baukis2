@@ -459,7 +459,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     uri (0.13.0)
-    valid_email2 (5.2.1)
+    valid_email2 (5.2.3)
       activemodel (>= 3.2)
       mail (~> 2.5)
     web-console (4.2.1)
