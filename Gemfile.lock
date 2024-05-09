@@ -138,7 +138,7 @@ GEM
       no_proxy_fix
       octokit (>= 4.0)
       terminal-table (>= 1, < 4)
-    danger-packwerk (0.14.3)
+    danger-packwerk (0.14.4)
       code_ownership
       danger-plugin-api (~> 1.0)
       packs
@@ -257,7 +257,8 @@ GEM
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
     open4 (1.3.4)
-    packs (0.0.39)
+    packs (0.0.41)
+      bigdecimal
       code_ownership (>= 1.33.0)
       packs-specification
       packwerk
@@ -423,7 +424,7 @@ GEM
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
     smart_properties (1.17.0)
-    sorbet-runtime (0.5.11368)
+    sorbet-runtime (0.5.11370)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
