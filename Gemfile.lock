@@ -80,14 +80,14 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
-    better_html (2.0.2)
+    better_html (2.1.1)
       actionview (>= 6.0)
       activesupport (>= 6.0)
       ast (~> 2.0)
       erubi (~> 1.4)
       parser (>= 2.4)
       smart_properties
-    bigdecimal (3.1.7)
+    bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.3)
       msgpack (~> 1.2)
@@ -138,9 +138,10 @@ GEM
       no_proxy_fix
       octokit (>= 4.0)
       terminal-table (>= 1, < 4)
-    danger-packwerk (0.14.2)
+    danger-packwerk (0.14.4)
       code_ownership
       danger-plugin-api (~> 1.0)
+      packs
       packwerk
       parse_packwerk
       sorbet-runtime
@@ -179,15 +180,15 @@ GEM
       rchardet (~> 1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    i18n (1.14.4)
+    i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
     io-console (0.7.2)
-    irb (1.11.2)
-      rdoc
+    irb (1.13.1)
+      rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
@@ -256,7 +257,8 @@ GEM
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
     open4 (1.3.4)
-    packs (0.0.39)
+    packs (0.0.41)
+      bigdecimal
       code_ownership (>= 1.33.0)
       packs-specification
       packwerk
@@ -271,7 +273,7 @@ GEM
       railties
     packs-specification (0.0.10)
       sorbet-runtime
-    packwerk (3.2.0)
+    packwerk (3.2.1)
       activesupport (>= 6.0)
       ast
       better_html
@@ -279,10 +281,10 @@ GEM
       constant_resolver (>= 0.2.0)
       parallel
       parser
-      prism (>= 0.24.0)
+      prism (>= 0.25.0)
       sorbet-runtime (>= 0.5.9914)
       zeitwerk (>= 2.6.1)
-    packwerk-extensions (0.1.9)
+    packwerk-extensions (0.2.0)
       packwerk (>= 2.2.1)
       railties (>= 6.0.0)
       sorbet-runtime
@@ -299,7 +301,7 @@ GEM
     playwright-ruby-client (1.40.0)
       concurrent-ruby (>= 1.1.6)
       mime-types (>= 3.0)
-    prism (0.24.0)
+    prism (0.28.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -307,11 +309,11 @@ GEM
       pry (>= 0.10.4)
     psych (5.1.2)
       stringio
-    public_suffix (5.0.4)
+    public_suffix (5.0.5)
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
-    rack (3.0.10)
+    rack (3.0.11)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -352,7 +354,7 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.1.0)
+    rake (13.2.1)
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
@@ -360,7 +362,7 @@ GEM
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
-    reline (0.4.3)
+    reline (0.5.6)
       io-console (~> 0.5)
     rexml (3.2.6)
     rspec-core (3.12.3)
@@ -380,7 +382,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.2)
-    rubocop (1.63.4)
+    rubocop (1.63.5)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -391,8 +393,8 @@ GEM
       rubocop-ast (>= 1.31.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.31.2)
-      parser (>= 3.3.0.4)
+    rubocop-ast (1.31.3)
+      parser (>= 3.3.1.0)
     rubocop-capybara (2.20.0)
       rubocop (~> 1.41)
     rubocop-factory_bot (2.25.1)
@@ -402,12 +404,12 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)
-    rubocop-rspec (2.29.1)
+    rubocop-rspec (2.29.2)
       rubocop (~> 1.40)
       rubocop-capybara (~> 2.17)
       rubocop-factory_bot (~> 2.22)
       rubocop-rspec_rails (~> 2.28)
-    rubocop-rspec_rails (2.28.2)
+    rubocop-rspec_rails (2.28.3)
       rubocop (~> 1.40)
     ruby-progressbar (1.13.0)
     sassc (2.4.0)
@@ -422,7 +424,7 @@ GEM
       addressable (>= 2.3.5)
       faraday (>= 0.17.3, < 3)
     smart_properties (1.17.0)
-    sorbet-runtime (0.5.11262)
+    sorbet-runtime (0.5.11370)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
