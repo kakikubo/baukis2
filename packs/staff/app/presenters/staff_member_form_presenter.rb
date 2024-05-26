@@ -2,7 +2,7 @@
 
 class StaffMemberFormPresenter < UserFormPresenter
   def password_field_block(name, label_text, options = nil)
-    super(name, label_text, options) if object.new_record?
+    super if object.new_record?
   end
 
   def suspended_check_box
