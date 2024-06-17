@@ -17,6 +17,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3.3
-          bundler-cache: true
+          bundler-cache: false
       - name: Run erblint
         run: bundle exec erblint --lint-all
