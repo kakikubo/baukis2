@@ -18,6 +18,5 @@ jobs:
         with:
           ruby-version: 3.3.3
           bundler-cache: false
-        run: bundle install
       - name: Run erblint
-        run: bundle exec erblint --lint-all
+        run: bundle install && bundle exec erblint --lint-all
