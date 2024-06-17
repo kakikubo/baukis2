@@ -16,7 +16,7 @@ jobs:
     - name: Set up Ruby 3.3
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.3.2
+        ruby-version: 3.3.3
 
     - name: Create a release pull request
       env:
