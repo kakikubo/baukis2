@@ -2,10 +2,10 @@
 <h1><%= @title %></h1>
 
 <div id="generic-form">
-  <%= form_with model: @customer_form, scope: 'form', url: :staff_customers do |f| %>
-    <%= render 'form', f: f %>
+  <%= form_with model: @customer_form, scope: 'form', url: :staff_customers do |fv| %>
+    <%= render 'form', f: fv %>
     <div class="buttons">
-      <%= f.submit '登録' %>
+      <%= fv.submit '登録' %>
       <%= link_to 'キャンセル', :staff_customers %>
     </div>
   <% end %>
