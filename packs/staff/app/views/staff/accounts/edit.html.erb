@@ -3,7 +3,7 @@
 
 <div id="generic-form">
   <%= form_with model: @staff_member, url: :staff_account do |f| %>
-    <%= render 'form', f: %>
+    <%= render 'form', fv: f %>
     <div class="buttons">
       <%= f.submit '更新' %>
       <%= link_to 'キャンセル', :staff_account %>
