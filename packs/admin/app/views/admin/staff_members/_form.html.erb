@@ -1,5 +1,5 @@
 <%= markup do |m|
-      p = UserFormPresenter.new(f, self)
+      p = UserFormPresenter.new(fv, self)
       m << p.notes
       p.with_options(required: true) do |q|
         m << q.text_field_block(:email, 'メールアドレス', size: 32)
