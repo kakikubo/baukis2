@@ -30,4 +30,6 @@ linters:
       # bug? 
       Layout/LeadingEmptyLines:
         Enabled: false
+      Style/HashSyntax:
+        Enabled: true
 
