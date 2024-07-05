@@ -45,12 +45,6 @@
     - privacy
     files:
     - packs/customer/app/models/customer.rb
-  "::StaffService":
-    violations:
-    - dependency
-    - privacy
-    files:
-    - packs/customer/config/initializers/configure_customer.rb
   "::StringNormalizer":
     violations:
     - dependency
@@ -64,3 +58,10 @@
     - privacy
     files:
     - packs/customer/app/presenters/customer_form_presenter.rb
+packs/staff:
+  "::StaffService":
+    violations:
+    - dependency
+    - privacy
+    files:
+    - packs/customer/config/initializers/configure_customer.rb
