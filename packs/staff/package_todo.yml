@@ -71,6 +71,7 @@
     files:
     - packs/staff/app/controllers/staff/customers_controller.rb
     - packs/staff/app/forms/staff/customer_form.rb
+    - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
   "::UserFormPresenter":
     violations:
     - dependency
@@ -84,7 +85,6 @@ packs/customer:
     - dependency
     - privacy
     files:
-    - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
     - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
   "::CustomerFormPresenter":
     violations:
