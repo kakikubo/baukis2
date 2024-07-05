@@ -64,15 +64,6 @@
     - privacy
     files:
     - packs/staff/app/models/staff_member.rb
-  "::StaffService":
-    violations:
-    - dependency
-    - privacy
-    files:
-    - packs/staff/app/controllers/staff/customers_controller.rb
-    - packs/staff/app/forms/staff/customer_form.rb
-    - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
-    - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
   "::UserFormPresenter":
     violations:
     - dependency
