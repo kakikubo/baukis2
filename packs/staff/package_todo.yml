@@ -72,6 +72,7 @@
     - packs/staff/app/controllers/staff/customers_controller.rb
     - packs/staff/app/forms/staff/customer_form.rb
     - packs/staff/app/views/staff/customers/_home_address_fields.html.erb
+    - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
   "::UserFormPresenter":
     violations:
     - dependency
@@ -80,12 +81,6 @@
     - packs/staff/app/presenters/staff_member_form_presenter.rb
     - packs/staff/app/views/staff/accounts/_form.html.erb
 packs/customer:
-  "::Address::PREFECTURE_NAMES":
-    violations:
-    - dependency
-    - privacy
-    files:
-    - packs/staff/app/views/staff/customers/_work_address_fields.html.erb
   "::CustomerFormPresenter":
     violations:
     - dependency
