@@ -39,21 +39,17 @@ jobs:
         with:
           ruby-version: 3.3.4
 
-      #MySQLをインストール
-      #- name: Install dependent libralies
-      #  run: sudo apt-get install libmysqlclient-dev
       - name: Setup bundler
         run: gem install bundler
-
-      - name: bundle install
-        run: |
-          bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: Enable corepack and prepare pnpm
         run: |
           corepack enable
           corepack prepare pnpm --activate
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps chromium
+      - name: bundle install
+        run: |
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
       - name: rubocop
         run: bundle exec rubocop
 
