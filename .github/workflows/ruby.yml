@@ -48,13 +48,9 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          run_install: false
-      - name: Enable corepack and prepare pnpm
-        run: |
-          corepack enable
-          corepack prepare pnpm --activate
-      - name: Install dependencies
-        run: pnpm install
+          run_install: true
+          # - name: Install dependencies
+          #   run: pnpm install
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps chromium
 
