@@ -41,3 +41,4 @@ vendor/bundle/*
 !/app/assets/builds/.keep
 .envrc
 .config/
+.pnpm-store/

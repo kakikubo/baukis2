@@ -48,10 +48,12 @@ jobs:
       - name: bundle install
         run: |
           bundle install --jobs 4 --retry 3 --path vendor/bundle
-      - name: yarn install
-        run: yarn install --check-files
+      - name: Enable corepack and prepare pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm --activate
       - name: Install Playwright
-        run: yarn playwright install chromium
+        run: pnpm playwright install chromium
       - name: rubocop
         run: bundle exec rubocop
 
