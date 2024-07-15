@@ -238,7 +238,7 @@ GEM
     nap (1.1.0)
     net-http (0.4.1)
       uri
-    net-imap (0.4.12)
+    net-imap (0.4.14)
       date
       net-protocol
     net-pop (0.1.2)
@@ -296,7 +296,7 @@ GEM
     parallel (1.25.1)
     parse_packwerk (0.22.0)
       sorbet-runtime
-    parser (3.3.3.0)
+    parser (3.3.4.0)
       ast (~> 2.4.1)
       racc
     pastel (0.8.0)
@@ -317,7 +317,7 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.0)
-    rack (3.1.6)
+    rack (3.1.7)
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -409,7 +409,7 @@ GEM
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
       rubocop-ast (>= 1.30.0, < 2.0)
-    rubocop-rspec (3.0.2)
+    rubocop-rspec (3.0.3)
       rubocop (~> 1.61)
     ruby-progressbar (1.13.0)
     sassc (2.4.0)
@@ -462,7 +462,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
     uri (0.13.0)
-    valid_email2 (5.2.3)
+    valid_email2 (5.2.4)
       activemodel (>= 3.2)
       mail (~> 2.5)
     web-console (4.2.1)
