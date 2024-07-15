@@ -1,6 +1,6 @@
 # ビルド用コンテナ
 ARG IMAGE_FILE
-FROM $IMAGE_FILE:3.2.2-alpine3.17 AS builder
+FROM $IMAGE_FILE:3.3.4-alpine3.20 AS builder
 RUN apk --no-cache add --virtual build-dependencies \
     build-base \
     git \
@@ -16,7 +16,6 @@ RUN apk --no-cache add --virtual build-dependencies \
     postgresql-dev
 RUN apk --no-cache add \
     bash \
-    yarn \
     postgresql-client \
     imagemagick \
     tzdata
@@ -34,7 +33,7 @@ RUN rm -rf /usr/local/bundle/cache/*
 # mainコンテナ
 #    ${BROWSER} \
 
-FROM ${IMAGE_FILE}:3.2.2-alpine3.17
+FROM ${IMAGE_FILE}:3.3.4-alpine3.20
 RUN apk --no-cache add \
     build-base \
     bash \
@@ -44,7 +43,6 @@ RUN apk --no-cache add \
     gcompat \
     gcc \
     libffi-dev \
-    yarn \
     readline-dev \
     libxml2-dev \
     libxslt-dev \
