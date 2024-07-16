@@ -39,19 +39,24 @@ jobs:
         with:
           ruby-version: 3.3.4
 
-      #MySQLをインストール
-      #- name: Install dependent libralies
-      #  run: sudo apt-get install libmysqlclient-dev
       - name: Setup bundler
         run: gem install bundler
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+          # - name: Install dependencies
+          #   run: pnpm install
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: bundle install
         run: |
           bundle install --jobs 4 --retry 3 --path vendor/bundle
-      - name: yarn install
-        run: yarn install --check-files
-      - name: Install Playwright
-        run: yarn playwright install chromium
       - name: rubocop
         run: bundle exec rubocop
 

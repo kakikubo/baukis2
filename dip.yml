@@ -17,10 +17,10 @@ interaction:
     service: web
     command: bundle
 
-  yarn:
-    description: Run Yarn commands
+  pnpm:
+    description: Run pnpm commands
     service: web
-    command: yarn
+    command: pnpm
 
   rake:
     description: Run Rake commands
