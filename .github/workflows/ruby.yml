@@ -76,3 +76,8 @@ jobs:
           RAILS_ENV: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+      - name: Codecov
+        uses: codecov/codecov-action@v4.5.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: coverage # このディレクトリに、テスティングツールによるカバレッジレポートファイルが出力される想定

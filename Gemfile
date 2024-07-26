@@ -53,4 +53,6 @@ group :test do
   gem 'capybara-playwright-driver'
   gem 'danger-packwerk'
   gem 'rspec-rails'
+  gem 'simplecov', require: false
+  gem 'simplecov-lcov', require: false
 end
