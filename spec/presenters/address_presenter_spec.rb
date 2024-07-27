@@ -23,7 +23,7 @@ RSpec.describe AddressPresenter do
       phone2 = Phone.new(number: '080-9876-5432')
       address = Address.new(phones: [phone1, phone2])
       presenter = described_class.new(address, view_context)
-      expect(presenter.phones).to match_array(['090-1234-5678', '080-9876-5432'])
+      expect(presenter.phones).to match_array(%w[090-1234-5678 080-9876-5432])
     end
   end
 end
