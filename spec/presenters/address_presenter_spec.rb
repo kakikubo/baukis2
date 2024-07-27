@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AddressPresenter do
-  let(:view_context) { double('view_context') }
+  let(:view_context) { instance_double(ActionView::Base) }
 
   describe '#postal_code' do
     it 'returns formatted postal code when valid' do
