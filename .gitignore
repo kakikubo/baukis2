@@ -39,3 +39,5 @@ vendor/bundle/*
 .envrc
 .config/
 .pnpm-store/
+
+coverage/*

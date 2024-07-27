@@ -1,4 +1,5 @@
 ![Build](https://github.com/kakikubo/baukis2/workflows/Build/badge.svg)
+[![codecov](https://codecov.io/gh/kakikubo/baukis2/graph/badge.svg?token=ZZ0UOHGQSB)](https://codecov.io/gh/kakikubo/baukis2)
 
 # Baukis2 - 顧客管理システム
 
@@ -8,7 +9,7 @@ Baukis2 は企業向けの顧客管理システム(Ruby on Rails 学習用サン
 
 ## 推奨されるシステム環境
 
-* Ubuntu 20.04
+* Ubuntu 22.04
 * Ruby 3.3.4
 * PostgreSQL 16
 
