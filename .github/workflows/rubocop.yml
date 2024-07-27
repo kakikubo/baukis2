@@ -14,7 +14,7 @@ jobs:
   rubocop:
     runs-on: ubuntu-latest
     env:
-      BUNDLE_ONLY: lint
+      BUNDLE_ONLY: development
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
