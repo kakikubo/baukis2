@@ -77,4 +77,46 @@ RSpec.describe StaffMember do
       expect(member2).not_to be_valid
     end
   end
+
+  describe '#active?' do
+    example '停止フラグがセットされていない場合はtrueを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today - 1)
+      expect(member).to be_active
+    end
+
+    example '停止フラグがセットされている場合はfalseを返す' do
+      member = build(:staff_member, suspended: true, start_date: Date.today - 1)
+      expect(member).not_to be_active
+    end
+
+    example '開始日が未来の日付の場合はfalseを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today + 1)
+      expect(member).not_to be_active
+    end
+
+    example '開始日が今日の場合はtrueを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today)
+      expect(member).to be_active
+    end
+
+    example '終了日が過去の日付の場合はfalseを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today - 5, end_date: Date.today - 1)
+      expect(member).not_to be_active
+    end
+
+    example '終了日が今日の場合はtrueを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today - 5, end_date: Date.today)
+      expect(member).to be_active
+    end
+
+    example '終了日が未来の日付の場合はtrueを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today - 5, end_date: Date.today + 1)
+      expect(member).to be_active
+    end
+
+    example '終了日が設定されていない場合はtrueを返す' do
+      member = build(:staff_member, suspended: false, start_date: Date.today - 5, end_date: nil)
+      expect(member).to be_active
+    end
+  end
 end
