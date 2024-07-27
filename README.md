@@ -1,4 +1,5 @@
 ![Build](https://github.com/kakikubo/baukis2/workflows/Build/badge.svg)
+[![codecov](https://codecov.io/gh/kakikubo/baukis2/graph/badge.svg?token=ZZ0UOHGQSB)](https://codecov.io/gh/kakikubo/baukis2)
 
 # Baukis2 - 顧客管理システム
 
