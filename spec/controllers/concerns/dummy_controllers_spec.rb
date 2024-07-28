@@ -37,6 +37,10 @@ RSpec.describe DummyController, type: :controller do
     end
   end
 
+  after do
+    Rails.application.reload_routes!
+  end
+
   describe 'handling errors' do
     it 'handles StandardError with internal server error' do
       get :raise_standard_error
