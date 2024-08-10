@@ -119,7 +119,7 @@ GEM
       sorbet-runtime
     coderay (1.1.3)
     colored2 (3.1.2)
-    concurrent-ruby (1.3.3)
+    concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     constant_resolver (0.2.0)
     cork (0.3.0)
