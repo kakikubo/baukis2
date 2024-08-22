@@ -16,7 +16,7 @@ importers:
         version: 7.2.0
       '@rails/activestorage':
         specifier: ^7.0.0
-        version: 7.2.0
+        version: 7.2.100
       jquery:
         specifier: ^3.5.1
         version: 3.7.1
@@ -76,8 +76,8 @@ packages:
   '@rails/actioncable@7.2.0':
     resolution: {integrity: sha512-crcsPF3skrqJkFZLxesZoyUEt8ol25XtTuOAUMdLa5qQKWTZpL8eLVW71bDCwKDQLbV2z5sBZ/XGEC0i+ZZa+A==}
 
-  '@rails/activestorage@7.2.0':
-    resolution: {integrity: sha512-jXK9tKDZn/j+ZeJuFdrtyrLNLWjzYRyp+mejWTfSp+egAp1okXsdfFNe8jqqgwcP8gytqJSPwo0sZwQVdQpuIA==}
+  '@rails/activestorage@7.2.100':
+    resolution: {integrity: sha512-gohCilm1E10W51Hc9iT960xX9TP11L5TJ4W1ufs9f3h5Ncsw01S/eHgVUfcdfszqw3G+28Z0MFu999+iSpgdTg==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -594,7 +594,7 @@ snapshots:
 
   '@rails/actioncable@7.2.0': {}
 
-  '@rails/activestorage@7.2.0':
+  '@rails/activestorage@7.2.100':
     dependencies:
       spark-md5: 3.0.2
 
