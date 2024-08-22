@@ -13,7 +13,7 @@ importers:
         version: 8.0.5
       '@rails/actioncable':
         specifier: ^7.0.0
-        version: 7.2.0
+        version: 7.2.100
       '@rails/activestorage':
         specifier: ^7.0.0
         version: 7.2.0
@@ -73,8 +73,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@rails/actioncable@7.2.0':
-    resolution: {integrity: sha512-crcsPF3skrqJkFZLxesZoyUEt8ol25XtTuOAUMdLa5qQKWTZpL8eLVW71bDCwKDQLbV2z5sBZ/XGEC0i+ZZa+A==}
+  '@rails/actioncable@7.2.100':
+    resolution: {integrity: sha512-7xtIENf0Yw59AFDM3+xqxPCZxev3QVAqjPmUzmgsB9eL8S/zTpB0IU9srNc7XknzJI4e09XKNnCaJRx3gfYzXA==}
 
   '@rails/activestorage@7.2.0':
     resolution: {integrity: sha512-jXK9tKDZn/j+ZeJuFdrtyrLNLWjzYRyp+mejWTfSp+egAp1okXsdfFNe8jqqgwcP8gytqJSPwo0sZwQVdQpuIA==}
@@ -562,7 +562,7 @@ snapshots:
   '@hotwired/turbo-rails@8.0.5':
     dependencies:
       '@hotwired/turbo': 8.0.5
-      '@rails/actioncable': 7.2.0
+      '@rails/actioncable': 7.2.100
 
   '@hotwired/turbo@8.0.5': {}
 
@@ -592,7 +592,7 @@ snapshots:
     dependencies:
       playwright: 1.46.1
 
-  '@rails/actioncable@7.2.0': {}
+  '@rails/actioncable@7.2.100': {}
 
   '@rails/activestorage@7.2.0':
     dependencies:
