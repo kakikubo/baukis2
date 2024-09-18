@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@hotwired/turbo-rails':
         specifier: ^8.0.0
-        version: 8.0.9
+        version: 8.0.10
       '@rails/actioncable':
         specifier: ^7.0.0
         version: 7.2.100
@@ -40,11 +40,11 @@ packages:
     resolution: {integrity: sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==}
     engines: {node: '>=10.0.0'}
 
-  '@hotwired/turbo-rails@8.0.9':
-    resolution: {integrity: sha512-yJWcKjztrerWYIiinv/febJlVzsOfih2s4eGAoHmg0XvWkGhzWqupknByt18Jo5NfbZgCdeWlUH3q818Ay7FOQ==}
+  '@hotwired/turbo-rails@8.0.10':
+    resolution: {integrity: sha512-BkERfjTbNwMb9/YQi0RL9+f9zkD+dZH2klEONtGwXrIE3O9BE1937Nn9++koZpDryD4XN3zE5U5ibyWoYJAWBg==}
 
-  '@hotwired/turbo@8.0.6':
-    resolution: {integrity: sha512-mwZRfwcJ4yatUnW5tcCY9NDvo0kjuuLQF/y8pXigHhS+c/JY/ccNluVyuERR9Sraqx0qdpenkO3pNeSWz1mE3w==}
+  '@hotwired/turbo@8.0.10':
+    resolution: {integrity: sha512-xen1YhNQirAHlA8vr/444XsTNITC1Il2l/Vx4w8hAWPpI5nQO78mVHNsmFuayETodzPwh25ob2TgfCEV/Loiog==}
     engines: {node: '>= 14'}
 
   '@jridgewell/gen-mapping@0.3.5':
@@ -553,12 +553,12 @@ snapshots:
 
   '@discoveryjs/json-ext@0.5.7': {}
 
-  '@hotwired/turbo-rails@8.0.9':
+  '@hotwired/turbo-rails@8.0.10':
     dependencies:
-      '@hotwired/turbo': 8.0.6
+      '@hotwired/turbo': 8.0.10
       '@rails/actioncable': 7.2.100
 
-  '@hotwired/turbo@8.0.6': {}
+  '@hotwired/turbo@8.0.10': {}
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
