@@ -26,6 +26,10 @@ jobs:
 
     # https://github.com/ruby/setup-ruby
     steps:
+      - uses: Kesin11/actions-timeline@v2
+        with:
+          # github-token: ${{ secrets.GITHUB_TOKEN }}
+          show-waiting-runner: true
       - name: checkout
         if: ${{ github.event_name != 'pull_request' }}
         uses: actions/checkout@v4
