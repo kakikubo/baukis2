@@ -1,6 +1,7 @@
 name: Monthly Branch and PR Creation
 
 on:
+  push:
   schedule:
     - cron: '0 0 1 * *'  # 毎月1日の0時0分実行
 
@@ -12,10 +13,10 @@ jobs:
   create_branch_and_pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
           fetch-depth: 0
 
       - name: Set up Git user
@@ -26,9 +27,9 @@ jobs:
       - name: Create new branch
         id: create-branch
         run: |
-          BRANCH_NAME=$(date +'%Y%m%d')_master
+          BRANCH_NAME=$(date +'%Y%m%d')_main
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
-          git checkout master
+          git checkout main
           git fetch origin
           git pull origin master
           git switch -c $BRANCH_NAME
@@ -36,7 +37,9 @@ jobs:
 
       - name: Create pull request
         run: |
-          gh pr create --base develop --head $BRANCH_NAME --title "$BRANCH_NAME to develop" --body "Automated PR from $BRANCH_NAME to develop"
+          gh pr create --base develop --head $BRANCH_NAME --title "$BRANCH_NAME to develop" \
+          --body "Automated PR from $BRANCH_NAME to develop \
+          https://github.com/${{ github.repository }}/compare/main...$BRANCH_NAME"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_NAME: ${{ env.branch_name }}
