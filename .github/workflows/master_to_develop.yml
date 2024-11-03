@@ -1,7 +1,6 @@
 name: Monthly Branch and PR Creation
 
 on:
-  push:
   schedule:
     - cron: '0 0 1 * *'  # 毎月1日の0時0分実行
 
