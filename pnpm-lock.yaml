@@ -12,11 +12,11 @@ importers:
         specifier: ^8.0.0
         version: 8.0.12
       '@rails/actioncable':
-        specifier: ^7.0.0
-        version: 7.2.200
+        specifier: ^8.0.0
+        version: 8.0.0
       '@rails/activestorage':
-        specifier: ^7.0.0
-        version: 7.2.200
+        specifier: ^8.0.0
+        version: 8.0.0
       jquery:
         specifier: ^3.5.1
         version: 3.7.1
@@ -76,8 +76,11 @@ packages:
   '@rails/actioncable@7.2.200':
     resolution: {integrity: sha512-gVmi3MabEa+Bkatvw0/k1Y3WTidcIf3qNbb9L8qc+AmT2UmkVqUZhJpSLvKmH10twCYIGzn7yySW/lOpg81Duw==}
 
-  '@rails/activestorage@7.2.200':
-    resolution: {integrity: sha512-NJX7T1Z4LuoNLGGVOoMiEK24BXkpH5QNLYOTD1Ll3IzYu5eMs/mbDL+azJGsTig6WV20O16Pdkj9Fgl9Mo5qxA==}
+  '@rails/actioncable@8.0.0':
+    resolution: {integrity: sha512-9IXyJeaBggOzlD3pF4/yWELdyUWZm/KTyKBRqxNf9laLBXPqxJt3t6fO+X4s0WajMR8cIhzkxvq1gxsXVbn3LA==}
+
+  '@rails/activestorage@8.0.0':
+    resolution: {integrity: sha512-qoA7U1gMcWXhDnImwDIyRQDXkQKzThT2lu2Xpim8CnTOCEeAgkQ5Co2kzodpAI2grF1JSDvwXSPYNWwVAswndA==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -589,7 +592,9 @@ snapshots:
 
   '@rails/actioncable@7.2.200': {}
 
-  '@rails/activestorage@7.2.200':
+  '@rails/actioncable@8.0.0': {}
+
+  '@rails/activestorage@8.0.0':
     dependencies:
       spark-md5: 3.0.2
 
