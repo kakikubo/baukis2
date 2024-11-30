@@ -41,7 +41,7 @@ jobs:
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
         with:
-          ruby-version: 3.3.5
+          ruby-version: .tool-versions
 
       - name: Setup bundler
         run: gem install bundler
