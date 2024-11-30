@@ -11,7 +11,7 @@ Baukis2 は企業向けの顧客管理システム(Ruby on Rails 学習用サン
 
 * Ubuntu 22.04
 * Ruby 3.3.6
-* PostgreSQL 16
+* PostgreSQL 17
 
 # 必要なシステム
 
