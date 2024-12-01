@@ -41,7 +41,7 @@ jobs:
       - name: Setup Ruby version
         uses: ruby/setup-ruby@master
         with:
-          ruby-version: 3.3.5
+          ruby-version: .tool-versions
 
       - name: Setup bundler
         run: gem install bundler
@@ -78,7 +78,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
       - name: Codecov
-        uses: codecov/codecov-action@v4.6.0
+        uses: codecov/codecov-action@v5.0.7
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: coverage # このディレクトリに、テスティングツールによるカバレッジレポートファイルが出力される想定
