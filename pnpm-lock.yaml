@@ -13,10 +13,10 @@ importers:
         version: 8.0.12
       '@rails/actioncable':
         specifier: ^8.0.0
-        version: 8.0.0
+        version: 8.0.1
       '@rails/activestorage':
         specifier: ^8.0.0
-        version: 8.0.0
+        version: 8.0.1
       jquery:
         specifier: ^3.5.1
         version: 3.7.1
@@ -73,14 +73,14 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@rails/actioncable@7.2.200':
-    resolution: {integrity: sha512-gVmi3MabEa+Bkatvw0/k1Y3WTidcIf3qNbb9L8qc+AmT2UmkVqUZhJpSLvKmH10twCYIGzn7yySW/lOpg81Duw==}
+  '@rails/actioncable@7.2.201':
+    resolution: {integrity: sha512-wsTdWoZ5EfG5k3t7ORdyQF0ZmDEgN4aVPCanHAiNEwCROqibSZMXXmCbH7IDJUVri4FOeAVwwbPINI7HVHPKBw==}
 
-  '@rails/actioncable@8.0.0':
-    resolution: {integrity: sha512-9IXyJeaBggOzlD3pF4/yWELdyUWZm/KTyKBRqxNf9laLBXPqxJt3t6fO+X4s0WajMR8cIhzkxvq1gxsXVbn3LA==}
+  '@rails/actioncable@8.0.1':
+    resolution: {integrity: sha512-gxRd3OnXm6IB4YxOJE6a6A+5ArQMzOKorceMTaIjiemCfWbJCMNZjXDKfIvgNff52x4vSLd1JQCcXtV4pVTJ1w==}
 
-  '@rails/activestorage@8.0.0':
-    resolution: {integrity: sha512-qoA7U1gMcWXhDnImwDIyRQDXkQKzThT2lu2Xpim8CnTOCEeAgkQ5Co2kzodpAI2grF1JSDvwXSPYNWwVAswndA==}
+  '@rails/activestorage@8.0.1':
+    resolution: {integrity: sha512-LBLMOVL+nGTyiSyrLhikSCVr7lPLOmkGKELR8NxaoneIV4+QICvhe+AYVuklhJcMIN21WK7M1SzwItv9mSXX4A==}
 
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -560,7 +560,7 @@ snapshots:
   '@hotwired/turbo-rails@8.0.12':
     dependencies:
       '@hotwired/turbo': 8.0.12
-      '@rails/actioncable': 7.2.200
+      '@rails/actioncable': 7.2.201
 
   '@hotwired/turbo@8.0.12': {}
 
@@ -590,11 +590,11 @@ snapshots:
     dependencies:
       playwright: 1.49.1
 
-  '@rails/actioncable@7.2.200': {}
+  '@rails/actioncable@7.2.201': {}
 
-  '@rails/actioncable@8.0.0': {}
+  '@rails/actioncable@8.0.1': {}
 
-  '@rails/activestorage@8.0.0':
+  '@rails/activestorage@8.0.1':
     dependencies:
       spark-md5: 3.0.2
 
