@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.3.6'
+ruby '3.4.1'
 
 gem 'importmap-rails'
 gem 'jbuilder', '~> 2.11'
@@ -27,6 +27,7 @@ gem 'bcrypt'
 gem 'date_validator'
 gem 'faraday-retry'
 gem 'kaminari'
+gem 'nkf'
 gem 'nokogiri'
 gem 'rails-i18n'
 gem 'valid_email2'
