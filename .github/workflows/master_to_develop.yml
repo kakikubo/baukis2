@@ -1,6 +1,7 @@
 name: Monthly Branch and PR Creation
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *'  # 毎月1日の0時0分実行
 
@@ -26,7 +27,7 @@ jobs:
       - name: Create new branch
         id: create-branch
         run: |
-          BRANCH_NAME=$(date +'%Y%m%d')_main
+          BRANCH_NAME="$(date +'%Y%m%d')_main"
           echo "branch_name=$BRANCH_NAME" >> $GITHUB_ENV
           git checkout main
           git fetch origin
