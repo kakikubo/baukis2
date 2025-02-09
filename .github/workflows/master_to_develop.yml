@@ -13,10 +13,10 @@ jobs:
   create_branch_and_pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout master branch
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: master
           fetch-depth: 0
 
       - name: Set up Git user
@@ -27,11 +27,11 @@ jobs:
       - name: Create new branch
         id: create-branch
         run: |
-          BRANCH_NAME="$(date +'%Y%m%d')_main"
+          BRANCH_NAME="$(date +'%Y%m%d')_master"
           echo "branch_name=${BRANCH_NAME}" >> "${GITHUB_OUTPUT}"
-          git checkout main
+          git checkout master
           git fetch origin
-          git pull origin main
+          git pull origin master
           git switch -c "${BRANCH_NAME}"
           git push origin "${BRANCH_NAME}"
 
@@ -39,7 +39,7 @@ jobs:
         run: |
           gh pr create --base develop --head "${BRANCH_NAME}" --title "${BRANCH_NAME} to develop" \
           --body "Automated PR from ${BRANCH_NAME} to develop \
-          https://github.com/${{ github.repository }}/compare/main...${BRANCH_NAME}"
+          https://github.com/${{ github.repository }}/compare/master...${BRANCH_NAME}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH_NAME: ${{ steps.create-branch.outputs.branch_name }}
