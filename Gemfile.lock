@@ -215,7 +215,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logger (1.6.5)
+    logger (1.6.6)
     loofah (2.24.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -243,7 +243,7 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.5.0)
+    net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
     nkf (0.2.0)
@@ -467,7 +467,7 @@ GEM
     unicode-display_width (2.6.0)
     uri (1.0.2)
     useragent (0.16.11)
-    valid_email2 (7.0.0)
+    valid_email2 (7.0.9)
       activemodel (>= 6.0)
       mail (~> 2.5)
     web-console (4.2.1)
