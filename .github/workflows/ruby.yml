@@ -16,13 +16,13 @@ jobs:
 
     services:
       postgres:
-        image: postgres:18.3-alpine
+        image: postgres:18.4-alpine
         ports:
           - 5432:5432
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        options: --health-cmd pg_isready --health-interval 3s --health-timeout 5s --health-retries 5 --health-start-period 5s
 
     # https://github.com/ruby/setup-ruby
     steps:
@@ -39,12 +39,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Ruby version
-        uses: ruby/setup-ruby@master
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: .tool-versions
-
-      - name: Setup bundler
-        run: gem install bundler
+          bundler-cache: true
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
@@ -52,15 +50,32 @@ jobs:
           package-manager-cache: false
       - name: Install pnpm
         uses: pnpm/action-setup@v6
+      - name: Get pnpm store directory
+        id: pnpm-store
+        run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
+      - name: Cache Playwright Browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
       - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: pnpm exec playwright install --with-deps chromium
-
-      - name: bundle install
-        run: |
-          bundle config set path 'vendor/bundle'
-          bundle install --jobs 4 --retry 3
+      - name: Install Playwright system deps
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: pnpm exec playwright install-deps chromium
       - name: Setup Database
         run: |
           cp config/database.yml.github-actions config/database.yml
