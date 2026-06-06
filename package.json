@@ -9,7 +9,7 @@
     "@rails/activestorage": "^8.0.300",
     "jquery": "^4.0.0",
     "sass": "^1.80.0",
-    "sass-loader": "^16.0.0",
+    "sass-loader": "^17.0.0",
     "css-loader": "^7.1.0",
     "mini-css-extract-plugin": "^2.9.0",
     "webpack": "^5.95.0",
@@ -25,5 +25,5 @@
     "build:prod": "webpack --config ./config/webpack/webpack.config.js --mode=production",
     "watch": "webpack --config ./config/webpack/webpack.config.js --watch"
   },
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@11.5.2"
 }
