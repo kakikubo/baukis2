@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Enable auto-merge
         run: |
-          gh pr merge --auto --squash --repo "$GH_REPO" "$PR_NUMBER"
+          gh pr merge --auto --merge --repo "$GH_REPO" "$PR_NUMBER"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
