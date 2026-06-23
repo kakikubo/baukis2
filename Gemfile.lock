@@ -113,10 +113,18 @@ GEM
       cork
       nap
       open4 (~> 1.3)
-    code_ownership (1.39.0)
+    code_ownership (2.1.3)
       code_teams (~> 1.0)
       packs-specification
-      sorbet-runtime (>= 0.5.11249)
+      sorbet-runtime (>= 0.6.12763)
+    code_ownership (2.1.3-arm64-darwin)
+      code_teams (~> 1.0)
+      packs-specification
+      sorbet-runtime (>= 0.6.12763)
+    code_ownership (2.1.3-x86_64-linux)
+      code_teams (~> 1.0)
+      packs-specification
+      sorbet-runtime (>= 0.6.12763)
     code_teams (1.3.0)
       sorbet-runtime
     coderay (1.1.3)
@@ -470,7 +478,7 @@ GEM
     simplecov-lcov (0.9.0)
     simplecov_json_formatter (0.1.4)
     smart_properties (1.17.0)
-    sorbet-runtime (0.6.13192)
+    sorbet-runtime (0.6.13309)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
