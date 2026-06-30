@@ -469,7 +469,7 @@ GEM
     simplecov-lcov (0.9.0)
     simplecov_json_formatter (0.1.4)
     smart_properties (1.17.0)
-    sorbet-runtime (0.6.13192)
+    sorbet-runtime (0.6.13320)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
