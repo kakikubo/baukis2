@@ -18,4 +18,4 @@ staff は customer と root (.) に依存できる。admin と customer は依�
 Address (customer パック) は本物の STI 親 (HomeAddress / WorkAddress が継承)。StaffEvent (staff パック) は self.inheritance_column = nil で STI を無効化し、type は 'logged_in' 等の生の文字列カラム。type カラムを見て一律に STI と判断しない。
 
 ## テストと seeds
-新規テストと factory は対象パック内の spec/ に置き、既存の類似 spec を手本にする。システムテストのドライバはデフォルト :rack_test で、:js タグを付けた example だけが :playwright で動く (spec/rails_helper.rb)。seeds は packs/<パック>/db/seeds/<環境名>/*.rb に置く (db/seeds.rb が環境ごとに glob ロード)。
+新規テストと factory は対象パック内の spec/ に置き、既存の類似 spec を手本にする。システムテストのドライバはデフォルト :rack_test で、:js と :system の両メタデータを持つ example だけが :playwright で動く (spec/rails_helper.rb。type: :system は spec/system 配下で自動付与されるため、実際には :js タグを足せばよい)。seeds は packs/<パック>/db/seeds/<環境名>/*.rb に置く (db/seeds.rb が環境ごとに glob ロード)。
