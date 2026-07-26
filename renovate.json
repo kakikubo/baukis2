@@ -8,6 +8,7 @@
   "automergeStrategy": "merge-commit",
   "separateMajorMinor": false,
   "labels": ["dependencies"],
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchManagers": ["bundler"],
@@ -36,6 +37,9 @@
         "/^jest/",
         "/^ts-jest$/",
         "/^playwright/",
+        "/^@playwright//",
+        "/^webpack/",
+        "/^pnpm$/",
         "/^http-server$/",
         "/^actions/checkout$/",
         "/^release-drafter/release-drafter$/",
