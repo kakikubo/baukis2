@@ -8,6 +8,7 @@
   "automergeStrategy": "merge-commit",
   "separateMajorMinor": false,
   "labels": ["dependencies"],
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchManagers": ["bundler"],
