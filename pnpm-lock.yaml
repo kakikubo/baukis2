@@ -34,10 +34,10 @@ importers:
         version: 2.10.2(webpack@5.109.2)
       sass:
         specifier: ^1.80.0
-        version: 1.103.0
+        version: 1.103.1
       sass-loader:
         specifier: ^17.0.0
-        version: 17.0.0(sass@1.103.0)(webpack@5.109.2)
+        version: 17.0.0(sass@1.103.1)(webpack@5.109.2)
       webpack:
         specifier: ^5.95.0
         version: 5.109.2(postcss@8.5.6)(webpack-cli@7.2.2)
@@ -552,8 +552,8 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  picomatch@4.0.5:
-    resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
+  picomatch@4.0.7:
+    resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
   pkg-dir@4.2.0:
@@ -648,8 +648,8 @@ packages:
       webpack:
         optional: true
 
-  sass@1.103.0:
-    resolution: {integrity: sha512-+QpdXUDw19lVqRDlYIyje1Lq/0gHsnNHIl4x1CqeUg13zRhaQN11UvTvouwHWLXc9Q3rQVT6oBhFGRYJ5Z8gHw==}
+  sass@1.103.1:
+    resolution: {integrity: sha512-9icZURbP51S6S0QGoyaeqk9uB06GNWxsFYWfH5RgpFgqK5FA8tJcM3AdVxrZEVJ7dz+L87nG95gBKf4VuaMHGw==}
     engines: {node: '>=20.19.0'}
     hasBin: true
 
@@ -851,7 +851,7 @@ snapshots:
       detect-libc: 2.1.2
       is-glob: 4.0.3
       node-addon-api: 7.1.1
-      picomatch: 4.0.5
+      picomatch: 4.0.7
     optionalDependencies:
       '@parcel/watcher-android-arm64': 2.6.0
       '@parcel/watcher-darwin-arm64': 2.6.0
@@ -1187,7 +1187,7 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  picomatch@4.0.5:
+  picomatch@4.0.7:
     optional: true
 
   pkg-dir@4.2.0:
@@ -1257,12 +1257,12 @@ snapshots:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 
-  sass-loader@17.0.0(sass@1.103.0)(webpack@5.109.2):
+  sass-loader@17.0.0(sass@1.103.1)(webpack@5.109.2):
     optionalDependencies:
-      sass: 1.103.0
+      sass: 1.103.1
       webpack: 5.109.2(postcss@8.5.6)(webpack-cli@7.2.2)
 
-  sass@1.103.0:
+  sass@1.103.1:
     dependencies:
       chokidar: 5.0.0
       immutable: 5.1.9
