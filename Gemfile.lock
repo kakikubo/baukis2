@@ -478,7 +478,7 @@ GEM
     simplecov (1.1.1)
     simplecov-lcov (0.9.0)
     smart_properties (1.17.0)
-    sorbet-runtime (0.6.13437)
+    sorbet-runtime (0.6.13455)
     sprockets (4.4.0)
       concurrent-ruby (~> 1.1)
       logger
